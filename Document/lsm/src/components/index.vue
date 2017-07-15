@@ -128,6 +128,10 @@
                 }
             },
 
+            /**
+             * 邮箱验证
+             * @return {[type]} [description]
+             */
             emailVerification: function() {
                 var regEmail = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
 
@@ -187,7 +191,7 @@
              * @return {[type]} [description]
              */
             getVerificationCode: function() {
-
+                //TODO:向手机发送验证码
             },
 
             login: function() {
