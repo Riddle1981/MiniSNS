@@ -107,8 +107,12 @@
              * @return {[type]} [description]
              */
             userVerification: function() {
+                var regName = /^[a-zA-z]\w{3,15}$/;
+
                 if (this.userName.length == 0) {
                     this.nameTip = '用户名不能为空';
+                } else if (!regName.test(this.userName)) {
+                    this.nameTip = '字母、数字、下划线组成，字母开头，4-16位';
                 } else {
                     this.nameTip = '';
                 }
