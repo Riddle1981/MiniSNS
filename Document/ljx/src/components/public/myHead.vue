@@ -117,9 +117,11 @@ export default{
       close: function (event) {
         this.info = false
       },
+//      以上令与info关联的两个div块的v-show为true
       mycou: function (event) {
         var a = this.text.length
         this.wordc = 300 - a
+//        以上为剩余字数统计
       }
     },
     components: { myblog: myBlog }
@@ -127,9 +129,8 @@ export default{
 </script>
 
 <style>
-  #text label{
-    background: green;
-    margin-top: -100px;
+  #text{
+    vertical-align: top;
   }
   *{
     margin: 0px;
@@ -150,11 +151,13 @@ export default{
     float:left;
     width: 150px;
     height: 230px;
+    /*以上为头像和粉丝关注数部分样式*/
   }
   #myDatum{
     margin-left: 20px;
     margin-top: 50px;
     height: 30px;
+    /*以上为资料显示部分包含昵称样式*/
   }
   #myDatum li{
     float:left;
@@ -167,33 +170,39 @@ export default{
     height: 200px;
     width: 1000px;
     float: left;
+    /*以上为资料显示部分除昵称样式*/
   }
   #nicename{
     font-size: 28px;
     text-align: left;
     margin-left: 20px;
     margin-top: 25px;
+    /*以上为昵称部分样式*/
   }
   #head{
-    width:1168px;
+    width:1150px;
     height:230px;
     padding-left: 20px;
     margin:0 auto;
     padding-top: 15px;
     background: #FFF;
     border:1px solid #ccc;
+    /*以上是个人主页的整个信息部分*/
   }
   #pic{
     width:150px;
     height:150px;
+    /*头像的div模块*/
   }
   .pic{
      width:150px;
      height:150px;
+    /*头像img样式*/
   }
   .msg{
     float:left;
     margin-left: 15px;
+    /*粉丝及关注信息*/
   }
   .msg p{
     font-weight: 500;
@@ -226,6 +235,7 @@ export default{
     display: block;
     margin-top: 10px;
     color: #000;
+    /*个人简介部分*/
   }
   #editor{
     margin-top: 40px;
@@ -234,6 +244,7 @@ export default{
     height: 35px;
     width: 150px;
     float: left;
+    /*资料编辑按钮样式*/
   }
   #editor button{
     width: 120px;
@@ -249,12 +260,12 @@ export default{
   #zzc{
     position: absolute;
     top: 0px;
-    z-index: 200;
     width:100%;
     height: 1200px;
     background: #000;
     opacity: 0.4;
     filter:alpha(Opacity=10);
+    /*遮罩层，此处加position直接形成叠加层无需z-index*/
   }
   #hr{
     width: 580px;
@@ -262,15 +273,18 @@ export default{
     margin-bottom: 15px;
   }
   #information{
-    z-index: 300;
-    top: 65px;
-    left: 340px;
-    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    margin-top: -290px;
+    margin-left: -340px;
+    /*以上为绝对定位居中*/
+    z-index: 1;
     position: absolute;
     width: 680px;
     height: 580px;
     background-color: #FFF;
     border: 1px solid #DCDCDC;
+    /*个人资料弹窗部分样式*/
   }
   #close {
     /*text-decoration: none;*/
