@@ -38,8 +38,8 @@
         </div>
       </div>
     </div>
-    <div id="zzc"></div>
-    <div id="information">
+    <div id="zzc" v-show="info"></div>
+    <div id="information" v-show="info">
       <span>编辑简介</span>
       <a id="close" @click="close">×</a>
       <hr size="1" width="680" id="hr"/>
@@ -97,6 +97,8 @@ export default{
     name: 'head',
     data () {
       return {
+        text: '',
+        info: false,
         following: '200',
         follower: '200',
         uname: 'Mocate',
@@ -110,16 +112,10 @@ export default{
     },
     methods: {
       upda: function (event) {
-        var zzc = document.getElementById('zzc')
-        var form = document.getElementById('information')
-        zzc.style.display = 'block'
-        form.style.display = 'block'
+        this.info = true
       },
       close: function (event) {
-        var ozzc = document.getElementById('zzc')
-        var oform = document.getElementById('information')
-        ozzc.style.display = 'none'
-        oform.style.display = 'none'
+        this.info = false
       },
       mycou: function (event) {
         var a = this.text.length
@@ -259,7 +255,6 @@ export default{
     background: #000;
     opacity: 0.4;
     filter:alpha(Opacity=10);
-    display:none;
   }
   #hr{
     width: 580px;
@@ -271,7 +266,6 @@ export default{
     top: 65px;
     left: 340px;
     margin: 0 auto;
-    display: none;
     position: absolute;
     width: 680px;
     height: 580px;
