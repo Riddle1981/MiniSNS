@@ -15,9 +15,6 @@
           </ul>
         </div>
       </div>
-      <div class="">
-
-      </div>
     </section>
   </div>
 </template>
