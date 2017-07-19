@@ -43,6 +43,7 @@
     position: fixed;
     width: 100%;
     height: 60px;
+    margin-bottom: 50px;
     -webkit-box-shadow: 5px 3px 5px #e9e9e9;
     -moz-box-shadow: 5px 3px 5px #e9e9e9;
     box-shadow: 5px 3px 5px #e9e9e9;

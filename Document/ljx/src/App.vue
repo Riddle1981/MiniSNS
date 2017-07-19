@@ -1,15 +1,17 @@
 <template>
   <div id="app">
     <myhead></myhead>
+    <router-view></router-view>
+
   </div>
 </template>
 
 <script>
 
-  import myHead from './components/public/myHead.vue'
+  import oHead from './components/public/head.vue'
 export default {
     name: 'app',
-    components: { myhead: myHead }
+    components: { myhead: oHead }
 }
 </script>
 
