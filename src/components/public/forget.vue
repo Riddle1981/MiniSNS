@@ -1,80 +1,79 @@
 <template>
-	<div class="forget-pass">
-		<div class="logo">
-			<img src="" alt="logo">
-		</div>
+    <div class="forget-pass">
+        <div class="forget-logo">
+          <img src="" alt="logo">
+        </div>
 
-		<form action="#">
-			<fieldset>
-				<legend>找回密码</legend>
+        <form action="#">
+            <fieldset>
+                <legend>找回密码</legend>
+                <p>
+                    <label>找回方式</label>
+                    <input v-on:click="findByTelephone" type="radio" name="findMethod" checked="true">用手机找回
+                    <input v-on:click="findByEmail" type="radio" name="findMethod" id="">用email找回
+                </p>
 
-				<p>
-					<label>找回方式</label>
-					<input v-on:click="findByTelephone" type="radio" name="findMethod" checked="true">用手机找回
-					<input v-on:click="findByEmail" type="radio" name="findMethod" id="">用email找回
-				</p>
+                <p id="find-by-telephone">
+                    <label>手机号码</label>
+                    <input class="input-text" type="text">
+                </p>
 
-				<p id="find-by-telephone">
-					<label>手机号码</label>
-					<input class="input-text" type="text">
-				</p>
+                <p id="find-by-telephone">
+                    <label>短信验证码</label>
+                    <input class="verificationCode" type="text">
+                    <button class="sendVerificationCode">获取验证码</button>
+                </p>
 
-				<p id="find-by-telephone">
-					<label>短信验证码</label>
-					<input class="verificationCode" type="text">
-					<button class="sendVerificationCode">获取验证码</button>
-				</p>
+                <p id="find-by-email">
+                    <label>Email</label>
+                    <input class="input-text" type="email">
+                </p>
 
-				<p id="find-by-email">
-					<label>Email</label>
-					<input class="input-text" type="email">
-				</p>
+                <p id="find-by-email">
+                    <label>验证码</label>
+                    <input class="input-text" type="text">
+                </p>
 
-				<p id="find-by-email">
-					<label>验证码</label>
-					<input class="input-text" type="text">
-				</p>
+                <p id="find-by-email">
+                    <img src="" alt="验证码">
+                </p>
 
-				<p id="find-by-email">
-					<img src="" alt="验证码">
-				</p>
+                <input class="btn" type="submit" value="提交">
+            </fieldset>
+        </form>
+        <div class="link">
+            <router-link to="register">
+                <span>用户登录</span>
+            </router-link>
+            <router-link to="/">
+                <span>返回首页</span>
+            </router-link>
+        </div>
 
-				<input class="btn" type="submit" value="提交">
-			</fieldset>
-		</form>
-		<div>
-			<router-link>
-				用户登录
-			</router-link>
-			<router-link>
-				返回首页
-			</router-link>
-		</div>
-
-	</div>
+    </div>
 </template>
 
-<!--<script>-->
-	<!--export default {-->
-		<!--methods: {-->
-			<!--findByTelephone: function () {-->
-				<!--var oShow = document.getElementById('find-by-telephone');-->
-				<!--var oHide = document.getElementById('find-by-email');-->
+<script>
+    export default {
+      methods: {
+        findByTelephone: function () {
+          var oShow = document.getElementById('find-by-telephone')
+          var oHide = document.getElementById('find-by-email')
 
-				<!--oShow.style.display = 'block';-->
-				<!--oHide.style.display = 'none';-->
-			<!--},-->
+          oShow.style.display = 'block'
+          oHide.style.display = 'none'
+        },
 
-			<!--findByEmail: function () {-->
-				<!--var oHide = document.getElementById('find-by-telephone');-->
-				<!--var oShow = document.getElementById('find-by-email');-->
+        findByEmail: function () {
+          var oHide = document.getElementById('find-by-telephone')
+          var oShow = document.getElementById('find-by-email')
 
-				<!--oHide.style.display = 'none';-->
-				<!--oShow.style.display = 'block';-->
-			<!--}-->
-		<!--}-->
-	<!--}-->
-<!--</script>-->
+          oHide.style.display = 'none'
+          oShow.style.display = 'block'
+        }
+      }
+    }
+</script>
 
 <style scoped>
 	.forget-pass {
@@ -82,22 +81,27 @@
 		text-align: center;
 		background: #e8e8e8;
 	}
-	.logo {
+	.forget-logo {
+    margin: 20px auto;
 		height: 100px;
 	}
 	form {
-		display: inline-block;
-		padding: 30px;
-		text-align: left;
+    display: inline-block;
+		text-align: center;
 		font-size: 14px;
 		background: #fff;
 	}
+  fieldset {
+    margin: 30px 50px;
+    border: none;
+  }
 	legend {
-		display: block;
-		font-size: 18px;
-		line-height: 50px;
-		text-align: center;
+    margin: 20px auto;
+    font-size:18px;
 	}
+  p {
+    margin: 12px 0;
+  }
 	label {
 		display: block;
 		margin: 5px 0;
@@ -106,7 +110,7 @@
 	}
 	.input-text,
 	.verificationCode {
-		padding: 6px 12px;
+		    padding: 6px 12px;
         font-size: 14px;
         line-height: 1.42858;
         color: #555;
@@ -121,23 +125,36 @@
 	.input-text {
 		width: 450px;
 	}
-	.verificationCode {
-		width: 350px;
-		border-top-right-radius: 0;
-		border-bottom-right-radius: 0;
-	}
+  input[type="radio"] {
+    margin: 10px 0px 10px 10px;
+  }
+  .verificationCode {
+    width: 350px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  input:focus {
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+  }
 	.sendVerificationCode {
-		width: 90px;
-		height: 35px;
-		background: #fff;
-		border: 1px solid #ccc;
+        width: 90px;
+        height: 35px;
+        text-align: center;
+        background: #fff;
+        border: 1px solid #ccc;
         border-top-right-radius: 6px;
         border-bottom-right-radius: 6px;
         cursor: pointer;
 	}
 	.btn {
-		width: 480px;
-		margin: 10px 0;
+        width: 480px;
+        margin: 10px 0;
         text-align: center;
         cursor: pointer;
         border: 1px solid #008151;
@@ -158,4 +175,13 @@
     #find-by-email {
     	display: none;
     }
+  .link {
+    margin: 10px 0;
+    text-align: center;
+  }
+  span {
+    margin: 0px 10px;
+    cursor: pointer;
+    color: #000;
+  }
 </style>
