@@ -1,3 +1,8 @@
+/**
+* 个人中心
+* Created by Riddle
+* 2017/7/15
+**/
 <template>
   <div id="myblog">
     <div id="blog">
@@ -72,6 +77,7 @@
     width:1170px;
     height:600px;
     margin:0 auto;
+    /*整体样式*/
   }
   #blog{
     height: 600px;
@@ -80,6 +86,7 @@
     background: #FFF;
     border:1px solid #ccc;
     float: left;
+    /*博文部分*/
   }
   #other{
     height: 600px;
@@ -89,11 +96,13 @@
     background: #FFF;
     border:1px solid #ccc;
     float: left;
+    /*关联信息列表部分*/
   }
   .list{
     width: 300px;
     display: inline-block;
     margin-bottom: 30px;
+    /*图片列表样式*/
   }
   .list p{
     font-size: 18px;

@@ -1,3 +1,8 @@
+/**
+* 个人资料
+* Created by Riddle
+* 2017/7/15
+**/
 <template>
   <div id="personal">
     <div id="head">
@@ -286,8 +291,17 @@
     border: 1px solid #DCDCDC;
     /*个人资料弹窗部分样式*/
   }
+  #information form .style1{
+    width: 230px;
+    height: 30px;
+    border: 1px solid #D7D7D7;
+  }
+  #information textarea{
+    width: 580px;
+    height: 100px;
+    border: 1px solid #D7D7D7;
+  }
   #close {
-    /*text-decoration: none;*/
     display: inline-block;
     margin-left: 620px;
     width: 20px;
@@ -295,6 +309,7 @@
     font-size: 32px;
     color: #808080;
     text-weight: 500;
+    /*关闭按钮*/
   }
   .btn{
     height: 35px;
@@ -308,23 +323,26 @@
     margin-right: 20px;
     font-size: 14px;
     color: #BE0000;
-
+    /*剩余字数统计的标签*/
   }
   .btn button{
     height: 27px;
     width: 80px;
     color: #FFF;
     border: none;
+    /*取消、保存按钮*/
   }
   #area{
     width: 680px;
   }
   #cancel{
     background: #999999;
+    /*取消*/
   }
   #save{
     margin-left: 10px;
     background: #BE0000;
+    /*保存*/
   }
   #information span{
     font-size: 18px;
@@ -343,6 +361,7 @@
     height: 40px;
     text-align: left;
     float: left;
+    /*表单项*/
   }
   .item .radio{
     margin-left: 10px;
@@ -354,15 +373,5 @@
   }
   #text lable{
     display: block;
-  }
-  #information form .style1{
-    width: 230px;
-    height: 30px;
-    border: 1px solid #D7D7D7;
-  }
-  #information textarea{
-    width: 580px;
-    height: 100px;
-    border: 1px solid #D7D7D7;
   }
 </style>

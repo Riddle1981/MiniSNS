@@ -1,3 +1,8 @@
+/**
+* 首部导航
+* Created by Riddle
+* 2017/7/18
+**/
 <template>
   <div class="navigation">
      <div class="logo">
@@ -65,14 +70,14 @@
     background-color: #F2F2F5;
     width:402px;
     height: 32px;
+    /*搜索*/
   }
   .search input{
     width: 400px;
     height: 30px;
     background: url("../../assets/search.png") no-repeat right;
     background-size: 18px 18px;
-    /*-moz-border-radius:5px;*/
-    /*border-radius:5px;*/
+    /*搜索输入框*/
   }
   #list{
     list-style: none;
@@ -80,6 +85,7 @@
     display: inline-block;
     margin-top: 20px;
     margin-left: 150px;
+    /*列表项*/
   }
   #list li{
     float: left;
@@ -93,10 +99,12 @@
   .item span {
     vertical-align: middle;
     line-height: 24px;
+    /*无序列表中的标签*/
   }
   .item img{
     width: 24px;
     height: 24px;
     vertical-align: middle;
+    /*无序列表中的图片*/
   }
 </style>
