@@ -1,3 +1,8 @@
+/**
+* 页尾
+* Created by Riddle
+* 2017/7/18
+**/
 <template>
   <div class="my_footer">
     <p class="footer_logo">©MiniSNS</p>
