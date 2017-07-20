@@ -1,27 +1,27 @@
 <template>
   <div class="login">
     <form action="#">
-      <legend>账号登录</legend>
-      <p>
-        <label>手机或Email</label>
-        <input type="text" placeholder="11位手机号或Email">
-      </p>
+      <fieldset>
+        <legend>账号登录</legend>
+        <p>
+          <label>手机或Email</label>
+          <input type="text" placeholder="11位手机号或Email">
+        </p>
 
-      <p>
-        <label>密　码</label>
-        <!-- <a href="#">忘记密码</a> -->
-        <input type="password" placeholder="密码">
-      </p>
+        <p>
+          <label>密　码</label>
+          <!-- <a href="#">忘记密码</a> -->
+          <input type="password" placeholder="密码">
+        </p>
 
-      <p>
-        <input type="checkbox" name="" id="zddl">自动登录
-        <router-link to="forget">
-          <a href="#">忘记密码？</a>
-        </router-link>
+        <p>
+          <input type="checkbox" name="" id="zddl">自动登录
+          <router-link to="forget">忘记密码？
+          </router-link>
 
-      </p>
-
-      <input class="btn" type="submit" value="登录">
+        </p>
+        <input class="btn" type="submit" value="登录">
+      </fieldset>
     </form>
   </div>
 </template>
@@ -51,6 +51,9 @@
   }
   form {
     display: inline-block;
+  }
+  fieldset{
+    border: none;
   }
   legend {
     margin: 20px auto;

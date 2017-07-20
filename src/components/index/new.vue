@@ -1,8 +1,6 @@
 <template lang="html">
   <div class="new">
-    <div class="list" v-for="data in datalist">
-      <vue-input :datainfo="data"></vue-input>
-    </div>
+    <vue-input :datainfo="data" class="list_section" v-for="data in datalist" :key="data.content"></vue-input>
   </div>
 </template>
 
@@ -63,7 +61,7 @@ export default {
 <style lang="less">
   .new{
     margin-top: 20px;
-    .list{
+    .list_section{
       margin-top: 10px;
     }
   }

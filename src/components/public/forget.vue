@@ -5,40 +5,42 @@
 		</div>
 
 		<form action="#">
-			<legend>找回密码</legend>
+			<fieldset>
+				<legend>找回密码</legend>
 
-			<p>
-				<label>找回方式</label>
-				<input v-on:click="findByTelephone" type="radio" name="findMethod" checked="true">用手机找回
-				<input v-on:click="findByEmail" type="radio" name="findMethod" id="">用email找回
-			</p>
+				<p>
+					<label>找回方式</label>
+					<input v-on:click="findByTelephone" type="radio" name="findMethod" checked="true">用手机找回
+					<input v-on:click="findByEmail" type="radio" name="findMethod" id="">用email找回
+				</p>
 
-			<p id="find-by-telephone">
-				<label>手机号码</label>
-				<input class="input-text" type="text">
-			</p>
+				<p id="find-by-telephone">
+					<label>手机号码</label>
+					<input class="input-text" type="text">
+				</p>
 
-			<p id="find-by-telephone">
-				<label>短信验证码</label>
-				<input class="verificationCode" type="text">
-				<button class="sendVerificationCode">获取验证码</button>
-			</p>
+				<p id="find-by-telephone">
+					<label>短信验证码</label>
+					<input class="verificationCode" type="text">
+					<button class="sendVerificationCode">获取验证码</button>
+				</p>
 
-			<p id="find-by-email">
-				<label>Email</label>
-				<input class="input-text" type="email">
-			</p>
+				<p id="find-by-email">
+					<label>Email</label>
+					<input class="input-text" type="email">
+				</p>
 
-			<p id="find-by-email">
-				<label>验证码</label>
-				<input class="input-text" type="text">
-			</p>
+				<p id="find-by-email">
+					<label>验证码</label>
+					<input class="input-text" type="text">
+				</p>
 
-			<p id="find-by-email">
-				<img src="" alt="验证码">
-			</p>
+				<p id="find-by-email">
+					<img src="" alt="验证码">
+				</p>
 
-			<input class="btn" type="submit" value="提交">
+				<input class="btn" type="submit" value="提交">
+			</fieldset>
 		</form>
 		<div>
 			<router-link>

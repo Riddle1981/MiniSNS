@@ -44,46 +44,48 @@
       <a id="close" @click="close">×</a>
       <hr size="1" width="680" id="hr"/>
       <form>
-        <div class="item">
-          <label>昵称：</label>
-          <input type="text" class="style1" :value="uname"/>
-        </div>
-        <div class="item">
-          <label>实名：</label>
-          <input type="text" class="style1"/><br/>
-        </div>
-        <div class="item" >
-          <label>职位：</label>
-          <input type="text" class="style1" :value="industry"/>
-        </div>
-        <div class="item" >
-          <label>性别：</label>
-          <input class="radio" type="radio" value="男" name="sex"/>男
-          <input class="radio" type="radio" value="女" name="sex"/>女<br/>
-        </div>
-        <div class="item">
-          <label>生日：</label>
-          <input type="datetime-local" class="style1" :value="birthday"/>
-        </div>
-        <div class="item">
-          <label>行业：</label>
-          <input type="text" class="style1" /><br/>
-        </div>
-        <div class="item" id="area">
-          <label>地区：</label>
-          <input type="text" class="style1" :value="domicile"/><br/>
-        </div>
-        <div class="item" id="text">
-          <label>简述：</label>
-          <textarea maxlength="300" name="textarea" @input="mycou" v-model="text"  :value="myintro"></textarea>
-        </div>
-        <div id="icount">
-          <p id="spann">您还可以输入{{wordc}}字</p>
-        </div>
-        <div class="btn">
-          <button id="cancel">取消</button>
-          <button id="save">保存</button>
-        </div>
+        <fieldset>
+          <div class="item">
+            <label>昵称：</label>
+            <input type="text" class="style1" :value="uname"/>
+          </div>
+          <div class="item">
+            <label>实名：</label>
+            <input type="text" class="style1"/><br/>
+          </div>
+          <div class="item" >
+            <label>职位：</label>
+            <input type="text" class="style1" :value="industry"/>
+          </div>
+          <div class="item" >
+            <label>性别：</label>
+            <input class="radio" type="radio" value="男" name="sex"/>男
+            <input class="radio" type="radio" value="女" name="sex"/>女<br/>
+          </div>
+          <div class="item">
+            <label>生日：</label>
+            <input type="datetime-local" class="style1" :value="birthday"/>
+          </div>
+          <div class="item">
+            <label>行业：</label>
+            <input type="text" class="style1" /><br/>
+          </div>
+          <div class="item" id="area">
+            <label>地区：</label>
+            <input type="text" class="style1" :value="domicile"/><br/>
+          </div>
+          <div class="item" id="text">
+            <label>简述：</label>
+            <textarea maxlength="300" name="textarea" @input="mycou" v-model="text"  :value="myintro"></textarea>
+          </div>
+          <div id="icount">
+            <p id="spann">您还可以输入{{wordc}}字</p>
+          </div>
+          <div class="btn">
+            <button id="cancel">取消</button>
+            <button id="save">保存</button>
+          </div>
+        </fieldset>
       </form>
     </div>
     <myblog></myblog>

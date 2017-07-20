@@ -1,6 +1,5 @@
 <template lang="html">
-  <div class="input">
-    <section class="inputlist">
+  <section class="input">
       <div class="info">
         <div class="info_left">
           <span class="votes">{{ datainfo.votes }} <br><small>得票</small></span>
@@ -15,8 +14,7 @@
           </ul>
         </div>
       </div>
-    </section>
-  </div>
+  </section>
 </template>
 
 <script>

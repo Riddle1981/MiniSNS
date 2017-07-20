@@ -24,7 +24,6 @@
          <span>登录/注册</span>
        </li>
      </ul>
-
   </div>
 </template>
 
