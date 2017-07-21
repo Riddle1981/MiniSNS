@@ -9,46 +9,47 @@
                  <img v-on:click="closeWindow" class="close">
             </div>
             <div class="view-content">
+
                 <form>
-                  <fieldset>
-                    <legend>注册</legend>
-                    <p>
-                        <label>名字</label>
-                        <input v-model="userName" v-on:change="userVerification" type="text" placeholder="真实姓名或常用昵称">
-                        <span>{{ nameTip }}</span>
-                    </p>
+                    <fieldset>
+                        <legend>注册</legend>
+                        <p>
+                            <label>名字</label>
+                            <input v-model="userName" v-on:change="userVerification" type="text" placeholder="真实姓名或常用昵称">
+                            <span>{{ nameTip }}</span>
+                        </p>
 
-                    <p>
-                        <input v-on:click="telephoneRegister" checked="checked" type="radio" name="registerMethod" title="用户名注册">用户名注册
-                        <input v-on:click="emailRegister" type="radio" name="registerMethod" title="用Email注册">用Email注册
-                    </p>
+                        <p>
+                            <input v-on:click="telephoneRegister" checked="checked" type="radio" name="registerMethod" title="用户名注册">用户名注册
+                            <input v-on:click="emailRegister" type="radio" name="registerMethod" title="用Email注册">用Email注册
+                        </p>
 
-                    <p id="show">
-                        <input v-model="telephone" v-on:blur="telephoneVerification" type="text" placeholder="仅支持大陆手机号">
-                        <span>{{ telephoneTip }}</span><br>
-                        <input id="verificationCode" type="text" placeholder="短信验证码">
-                        <button v-on:click="getVerificationCode" class="sendVerificationCode">获取验证码</button><br>
-                    </p>
+                        <p id="show">
+                            <input v-model="telephone" v-on:blur="telephoneVerification" type="text" placeholder="仅支持大陆手机号">
+                            <span>{{ telephoneTip }}</span><br>
+                            <input id="verificationCode" type="text" placeholder="短信验证码">
+                            <button v-on:click="getVerificationCode" class="sendVerificationCode">获取验证码</button><br>
+                        </p>
 
-                    <p id="hide">
-                        <label>邮　箱</label>
-                        <input v-model="email" v-on:blur="emailVerification" type="email" placeholder="请输入邮箱">
-                        <span>{{ emailTip }}</span>
-                    </p>
+                        <p id="hide">
+                            <label>邮　箱</label>
+                            <input v-model="email" v-on:blur="emailVerification" type="email" placeholder="请输入邮箱">
+                            <span>{{ emailTip }}</span>
+                        </p>
 
-                    <p>
-                        <label>密　码</label>
-                        <input v-model="pass" v-on:blur="passVerification" type="password" placeholder="不少于6位">
-                        <span>{{ passTip }}</span>
-                    </p>
+                        <p>
+                            <label>密　码</label>
+                            <input v-model="pass" v-on:blur="passVerification" type="password" placeholder="不少于6位">
+                            <span>{{ passTip }}</span>
+                        </p>
 
-                    <input class="btn" type="submit" value="注册">
-                  </fieldset>
+                        <input class="btn" type="submit" value="注册">
+                    </fieldset>
                 </form>
 
                 <form>
-                  <fieldset>
-                    <legend>登录</legend>
+                    <fieldset>
+                        <legend>登录</legend>
                         <p>
                             <label>手机或Email</label><br>
                             <input type="text" placeholder="11位手机号或Email">
@@ -69,15 +70,15 @@
                         <input class="btn" type="submit" value="登录">
 
                         <div class="quick-logon">
-                            <h6>快速登录</h6>
-                            <img src="../../assets/ellipsis.png" height="32" width="32" alt="其他方式">
-                            <img src="../../assets/google.png" height="32" width="32" alt="Google">
-                            <img src="../../assets/github.png" height="32" width="32" alt="github">
-                            <img src="../../assets/weibo.png" height="32" width="32" alt="微博">
-                            <img src="../../assets/wechat.png" height="32" width="32" alt="微信">
-                            <img src="../../assets/QQ.png" height="32" width="32" alt="QQ">
+                              <h6>快速登录</h6>
+                              <img src="../../assets/ellipsis.png" height="32" width="32" alt="其他方式">
+                              <img src="../../assets/google.png" height="32" width="32" alt="Google">
+                              <img src="../../assets/github.png" height="32" width="32" alt="github">
+                              <img src="../../assets/weibo.png" height="32" width="32" alt="微博">
+                              <img src="../../assets/wechat.png" height="32" width="32" alt="微信">
+                              <img src="../../assets/QQ.png" height="32" width="32" alt="QQ">
                         </div>
-                  </fieldset>
+                    </fieldset>
                 </form>
             </div>
         </div>
@@ -276,8 +277,8 @@
         text-align: center;
     }
     .view-content form {
-      float: left;
-      margin: 10px 65px;
+        float: left;
+        margin: 10px 80px;
     }
     fieldset {
         border: none;
@@ -322,18 +323,18 @@
      input[type="text"],
      input[type="password"],
      input[type="email"] {
-       display: block;
-       width: 284px;
-       height: 20px;
+         display: block;
+         width: 284px;
+         height: 34px;
      }
     input[type="search"] {
-      display: block;
-      width: 280px;
-      height: 30px;
+        display: block;
+        width: 280px;
+        height: 30px;
     }
     input[type="search"]:focus {
-      width: 500px;
-      transition: width ease-in-out 0.2s;
+        width: 500px;
+        transition: width ease-in-out 0.2s;
     }
     span {
         display: block;
