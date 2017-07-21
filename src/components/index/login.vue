@@ -1,8 +1,8 @@
 <template>
   <div class="login">
-    <form action="#">
-      <fieldset>
-        <legend>账号登录</legend>
+    <form action="#" class="form">
+      <fieldset class="fieldset">
+        <legend class="legend">账号登录</legend>
         <p>
           <label>手机或Email</label>
           <input type="text" placeholder="11位手机号或Email">
@@ -16,11 +16,9 @@
 
         <p>
           <input type="checkbox" name="" id="zddl">自动登录
-          <router-link to="forget">忘记密码？
-          </router-link>
-
+          <router-link to="forget" class="pdForget themeColor">忘记密码？</router-link>
         </p>
-        <input class="btn" type="submit" value="登录">
+        <input class="btn themeBgColor" type="submit" value="登录">
       </fieldset>
     </form>
   </div>
@@ -49,13 +47,13 @@
     border-radius: 6px;
     border: 1px solid #ccc;
   }
-  form {
+  .form {
     display: inline-block;
   }
-  fieldset{
+  .fieldset{
     border: none;
   }
-  legend {
+  .legend {
     margin: 20px auto;
   }
   p {
@@ -90,10 +88,9 @@
     margin-top: 10px;
     margin-left: -70px;
   }
-  a {
+  .pdForget {
     float: right;
     line-height: 35px;
-    color: #006633;
     font-size: 14px;
     text-decoration: none;
   }
@@ -108,14 +105,12 @@
     line-height: 1.42858;
     border-radius: 4px;
     color: #fff;
-    background: #009a61;
-    border-color: #008151;
     user-select: none;
   }
   .btn:hover {
     padding: 6px 98px;
-    background: #006741;
-    border-color: #00432a;
+    background: #0073ce;
+    border-color: #0F88E8;
   }
   .btn:active {
     outline: 0;

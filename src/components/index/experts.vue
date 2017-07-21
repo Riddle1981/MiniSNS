@@ -61,9 +61,9 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   .experts{
-    width: 60%;
+    width: 80%;
     margin-left: 10%;
     .list{
       padding-top: 10px;

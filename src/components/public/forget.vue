@@ -4,9 +4,9 @@
 			<img src="" alt="logo">
 		</div>
 
-		<form action="#">
+		<form action="#" class="form">
 			<fieldset>
-				<legend>找回密码</legend>
+				<legend class="legend">找回密码</legend>
 
 				<p>
 					<label>找回方式</label>
@@ -85,14 +85,14 @@
 	.logo {
 		height: 100px;
 	}
-	form {
+	.form {
 		display: inline-block;
 		padding: 30px;
 		text-align: left;
 		font-size: 14px;
 		background: #fff;
 	}
-	legend {
+	.legend {
 		display: block;
 		font-size: 18px;
 		line-height: 50px;
@@ -107,16 +107,16 @@
 	.input-text,
 	.verificationCode {
 		padding: 6px 12px;
-        font-size: 14px;
-        line-height: 1.42858;
-        color: #555;
-        background: #fff;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-        -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-             -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-                transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    font-size: 14px;
+    line-height: 1.42858;
+    color: #555;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+         -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+            transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
 	}
 	.input-text {
 		width: 450px;
@@ -131,31 +131,31 @@
 		height: 35px;
 		background: #fff;
 		border: 1px solid #ccc;
-        border-top-right-radius: 6px;
-        border-bottom-right-radius: 6px;
-        cursor: pointer;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    cursor: pointer;
 	}
 	.btn {
 		width: 480px;
 		margin: 10px 0;
-        text-align: center;
-        cursor: pointer;
-        border: 1px solid #008151;
-        padding: 6px 20px;
-        font-size: 14px;
-        border-radius: 6px;
-        color: #fff;
-        background: #009a61;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #008151;
+    padding: 6px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    color: #fff;
+    background: #009a61;
     }
-    .btn:hover {
-        padding: 6px 20px;
-        background: #006741;
-        border-color: #00432a;
-    }
-    .btn:active {
-        outline: 0;
-    }
-    #find-by-email {
-    	display: none;
-    }
+  .btn:hover {
+    padding: 6px 20px;
+    background: #006741;
+    border-color: #00432a;
+  }
+  .btn:active {
+    outline: 0;
+  }
+  #find-by-email {
+  	display: none;
+  }
 </style>

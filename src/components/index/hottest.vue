@@ -58,7 +58,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   .hottest{
     margin-top: 20px;
     .list_section{

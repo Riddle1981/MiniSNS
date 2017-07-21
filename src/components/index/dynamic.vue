@@ -5,7 +5,7 @@
     </div>
     <div class="person-info">
       <p class="sentence">{{ datainfo.sentence }}</p>
-      <a href="/" class="title">{{ datainfo.title}}</a>
+      <a href="/" class="title themeColor">{{ datainfo.title}}</a>
       <p class="description">{{ datainfo.description }}</p>
       <ul>
         <li v-for="data in datainfo.muted">{{ data.name }} {{ data.count }}</li>
@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   .dynamic{
     box-sizing: border-box;
     width: 60%;
@@ -52,7 +52,6 @@ export default {
       text-align: left;
       margin-left: 79px;
       .title{
-        color: #009a61;
         font-size: 16px;
         line-height: 1.4;
         font-weight: 500;

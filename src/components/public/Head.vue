@@ -36,12 +36,7 @@
 
 </script>
 
-<style>
-  *{
-    margin: 0px;
-    padding: 0px;
-    text-align: left;
-  }
+<style scoped>
   .navigation{
     top: 0px;
     position: fixed;
@@ -84,6 +79,8 @@
     display: inline-block;
     margin-top: 20px;
     margin-left: 150px;
+    padding: 0px;
+    text-align: left;
     /*列表项*/
   }
   #list li{

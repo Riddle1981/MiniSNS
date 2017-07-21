@@ -31,7 +31,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   .list{
     margin-top: 20px;
     float: left;
@@ -50,7 +50,7 @@ export default {
           padding: 10px 15px;
           text-decoration: none;
           outline: 0;
-          color: #009a61;
+          color: #0F88E8;
         }
         a:hover,a:focus{
           color:#555;

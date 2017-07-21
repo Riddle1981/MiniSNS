@@ -9,7 +9,7 @@
       <p class="description">{{ datainfo.description }}</p>
       <p class="job">{{ datainfo.job }}</p>
       <ul>
-        <li v-for="data in datainfo.tags" class="tags">{{ data }}</li>
+        <li v-for="data in datainfo.tags" class="tags themeColor">{{ data }}</li>
       </ul>
     </div>
   </div>
@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   .person{
     box-sizing: border-box;
     width: 80%;
@@ -86,8 +86,7 @@ export default {
         .tags{
           display: inline-block;
           padding: 0 8px;
-          color: #017E66;
-          background-color: rgba(1,126,102,0.08);
+          background-color: rgba(38, 147, 233, 0.2);
           height: 24px;
           line-height: 24px;
           font-weight: normal;

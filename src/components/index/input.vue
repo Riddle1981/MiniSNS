@@ -3,14 +3,14 @@
       <div class="info">
         <div class="info_left">
           <span class="votes">{{ datainfo.votes }} <br><small>得票</small></span>
-          <span class="answer">{{ datainfo.answer }} <br><small>回答</small></span>
+          <span class="answer themeBgColor">{{ datainfo.answer }} <br><small>回答</small></span>
           <span class="views">{{ datainfo.view }} <br><small>浏览</small></span>
         </div>
         <div class="info_right">
           <p>{{ datainfo.author }} {{ datainfo.time }}</p>
           <h2>{{ datainfo.content }}</h2>
           <ul>
-            <li v-for="tag in datainfo.tags">{{ tag }}</li>
+            <li v-for="tag in datainfo.tags" class="themeColor">{{ tag }}</li>
           </ul>
         </div>
       </div>
@@ -29,8 +29,8 @@ export default {
 }
 </script>
 
-<style lang="less">
-  *{
+<style lang="less" scoped>
+  .input{
     box-sizing: border-box;
   }
   .input{
@@ -52,7 +52,6 @@ export default {
       }
     }
     .answer{
-      background-color: #009A4A;
       color: #fff;
     }
   }
@@ -81,8 +80,7 @@ export default {
         margin-left: 5px;
         font-size: 13px;
         display: inline-block;
-        color:#017E66;
-        background-color: rgba(1,126,102,0.08);
+        background-color: rgba(38, 147, 233, 0.2);
       }
     }
   }

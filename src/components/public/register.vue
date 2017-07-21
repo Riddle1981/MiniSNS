@@ -64,9 +64,7 @@
 
                         <p>
                             <input type="checkbox">记住登录状态
-                            <router-link to="forget">
-                                <a href="#">忘记密码？</a>
-                            </router-link>
+                            <router-link to="forget" class="pdForget">忘记密码？</router-link>
                         </p>
 
                         <input v-on:click="login" class="btn" type="submit" value="登录">
@@ -374,7 +372,7 @@
     input[type="checkbox"] {
         margin-top: 10px;
     }
-    #container a {
+    #container .pdForget {
         float: right;
         line-height: 35px;
         color: #006633;

@@ -27,14 +27,16 @@
   }
 </script>
 
-<style>
+<style scoped>
   .my_footer{
+    position: absolute;
+    left:50%;
+    bottom: 10px;
     width: 60%;
-    display: inline-block;
     border-top: 1px solid #BBBBBB;
-    margin: 150px auto;
     font: 13px 'Helvetica Neue',Helvetica,Arial,sans-serif;
     color: #BBBBBB;
+    transform: translateX(-50%);
   }
   .footer_logo {
     margin-left: 1%;

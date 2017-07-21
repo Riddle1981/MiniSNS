@@ -43,7 +43,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   .feed{
     margin-top: 20px;
     .list{

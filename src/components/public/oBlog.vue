@@ -9,7 +9,7 @@
 
     </div>
     <div id="other">
-      <div id="visitor" class="list">
+      <div id="visitor" class="ljx-listOther">
         <p>最近来访<span>({{visitor}})</span></p>
         <hr/>
         <div id="myvisitor">
@@ -19,7 +19,7 @@
           <img src="../../assets/4.jpg">
         </div>
       </div>
-      <div id="following" class="list">
+      <div id="following" class="ljx-listOther">
         <p>我的关注<span>({{following}})</span></p>
         <hr/>
         <div id="myfollowing">
@@ -33,7 +33,7 @@
           <img src="../../assets/6.jpg">
         </div>
       </div>
-      <div id="follower" class="list">
+      <div id="follower" class="ljx-listOther">
         <p>我的粉丝<span>({{follower}})</span></p>
         <hr/>
         <div id="myfollwer">
@@ -67,12 +67,6 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  *{
-    margin: 0px;
-    padding: 0px;
-    text-align: left;
-  }
-
   #myblog{
     width:1170px;
     height:600px;
@@ -98,30 +92,30 @@
     float: left;
     /*关联信息列表部分*/
   }
-  .list{
+  .ljx-listOther{
     width: 300px;
     display: inline-block;
     margin-bottom: 30px;
     /*图片列表样式*/
   }
-  .list p{
+  .ljx-listOther p{
     font-size: 18px;
     font-weight: 500;
     display: inline-block;
     margin-left: 20px;
     margin-top: 10px;
   }
-  .list span{
+  .ljx-listOther span{
     color: #999999;
     font-size: 16px;
   }
-  .list hr{
+  .ljx-listOther hr{
     width:300px;
     margin-top: 10px;
     margin-bottom: 10px;
     opacity: 0.3;
   }
-  .list img{
+  .ljx-listOther img{
     width: 50px;
     height: 50px;
     float: left;

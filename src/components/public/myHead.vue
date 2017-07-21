@@ -135,14 +135,9 @@
   }
 </script>
 
-<style>
+<style scoped>
   #text{
     vertical-align: top;
-  }
-  *{
-    margin: 0px;
-    padding: 0px;
-    font-family: "Microsoft YaHei";
   }
   body{
     background: #E9E9E9;
