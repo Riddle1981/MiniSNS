@@ -7,13 +7,10 @@
           <label>手机或Email</label>
           <input type="text" placeholder="11位手机号或Email">
         </p>
-
         <p>
-          <label>密　码</label>
-          <!-- <a href="#">忘记密码</a> -->
-          <input type="password" placeholder="密码">
+              <label>密　码</label>
+              <input type="password" placeholder="密码">
         </p>
-
         <p>
           <input type="checkbox" name="" id="zddl">自动登录
           <router-link to="forget" class="pdForget themeColor">忘记密码？</router-link>
@@ -25,11 +22,10 @@
 </template>
 
 <script>
-  export default {
-    methods: {
-
+    export default {
+      methods: {
+      }
     }
-  }
 </script>
 
 <style scoped>
