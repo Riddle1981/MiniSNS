@@ -26,7 +26,10 @@
        </li>
        <li class="item">
          <img src="../../assets/user.png"/>
-         <span>登录/注册</span>
+         <router-link to="register">
+           <span>登录/注册</span>
+         </router-link>
+
        </li>
      </ul>
   </div>
@@ -65,25 +68,34 @@
   .search{
     float: left;
     margin-top: 15px;
-    margin-left: 30px;
-    background-color: #F2F2F5;
-    width:402px;
+    margin-left: 240px;
+    width: 402px;
     height: 32px;
     /*搜索*/
   }
   .search input{
     width: 400px;
     height: 30px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 4px 6px;
     background: url("../../assets/search.png") no-repeat right;
     background-size: 18px 18px;
     /*搜索输入框*/
+  }
+  input:focus {
+    border: 1px solid #3b99fc;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+            -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); 
   }
   #list{
     list-style: none;
     height: 24px;
     display: inline-block;
     margin-top: 20px;
-    margin-left: 150px;
+    margin-left: 40px;
     /*列表项*/
   }
   #list li{
