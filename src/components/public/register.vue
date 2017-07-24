@@ -1,57 +1,55 @@
 <template>
 <div class="main">
-    <!--<router-link to="login">-->
-        <!--<a href="#">登录</a>-->
-    <!--</router-link>-->
-
-    <!--<a v-on:click="showlLoginView" href="#">登录-窗口</a>-->
-
     <div id="cover"></div><!--遮盖层-->
 
     <div id="container">
         <div id="login-view">
             <div class="view-header">
                 <h4 class="header-title">登录</h4>
-                <img v-on:click="closeWindow" class="close">
+                 <img v-on:click="closeWindow" class="close">
             </div>
             <div class="view-content">
+
                 <form>
-                    <legend>注册</legend>
-                    <p>
-                        <label>名字</label>
-                        <input v-model="userName" v-on:change="userVerification" type="text" placeholder="真实姓名或常用昵称">
-                        <span>{{ nameTip }}</span>
-                    </p>
+                    <fieldset>
+                        <legend>注册</legend>
+                        <p>
+                            <label>名字</label>
+                            <input v-model="userName" v-on:change="userVerification" type="text" placeholder="真实姓名或常用昵称">
+                            <span>{{ nameTip }}</span>
+                        </p>
 
-                    <p>
-                        <input v-on:click="telephoneRegister" checked="true" type="radio" name="registerMethod">用手机号注册
-                        <input v-on:click="emailRegister" type="radio" name="registerMethod">用Email注册
-                    </p>
+                        <p>
+                            <input v-on:click="telephoneRegister" checked="checked" type="radio" name="registerMethod" title="用户名注册">用户名注册
+                            <input v-on:click="emailRegister" type="radio" name="registerMethod" title="用Email注册">用Email注册
+                        </p>
 
-                    <p id="show">
-                        <input v-model="telephone" v-on:blur="telephoneVerification" type="text" placeholder="仅支持大陆手机号">
-                        <span>{{ telephoneTip }}</span><br>
-                        <input id="verificationCode" type="text" placeholder="短信验证码">
-                        <button v-on:click="getVerificationCode" class="sendVerificationCode">获取验证码</button><br>
-                    </p>
+                        <p id="show">
+                            <input v-model="telephone" v-on:blur="telephoneVerification" type="text" placeholder="仅支持大陆手机号">
+                            <span>{{ telephoneTip }}</span><br>
+                            <input id="verificationCode" type="text" placeholder="短信验证码">
+                            <button v-on:click="getVerificationCode" class="sendVerificationCode">获取验证码</button><br>
+                        </p>
 
-                    <p id="hide">
-                        <label>邮　箱</label>
-                        <input v-model="email" v-on:blur="emailVerification" type="email" placeholder="请输入邮箱">
-                        <span>{{ emailTip }}</span>
-                    </p>
+                        <p id="hide">
+                            <label>邮　箱</label>
+                            <input v-model="email" v-on:blur="emailVerification" type="email" placeholder="请输入邮箱">
+                            <span>{{ emailTip }}</span>
+                        </p>
 
-                    <p>
-                        <label>密　码</label>
-                        <input v-model="pass" v-on:blur="passVerification" type="password" placeholder="不少于6位">
-                        <span>{{ passTip }}</span>
-                    </p>
+                        <p>
+                            <label>密　码</label>
+                            <input v-model="pass" v-on:blur="passVerification" type="password" placeholder="不少于6位">
+                            <span>{{ passTip }}</span>
+                        </p>
 
-                    <input class="btn" type="submit" value="注册">
+                        <input class="btn" type="submit" value="注册">
+                    </fieldset>
                 </form>
 
                 <form>
-                    <legend>登录</legend>
+                    <fieldset>
+                        <legend>登录</legend>
                         <p>
                             <label>手机或Email</label><br>
                             <input type="text" placeholder="11位手机号或Email">
@@ -67,25 +65,26 @@
                             <router-link to="forget" class="pdForget">忘记密码？</router-link>
                         </p>
 
-                        <input v-on:click="login" class="btn" type="submit" value="登录">
+                        <input class="btn" type="submit" value="登录">
 
                         <div class="quick-logon">
-                            <h6>快速登录</h6>
-                            <img src="../../assets/ellipsis.png" height="32" width="32" alt="">
-                            <img src="../../assets/google.png" height="32" width="32" alt="Google">
-                            <img src="../../assets/github.png" height="32" width="32" alt="github">
-                            <img src="../../assets/weibo.png" height="32" width="32" alt="微博">
-                            <img src="../../assets/wechat.png" height="32" width="32" alt="微信">
-                            <img src="../../assets/QQ.png" height="32" width="32" alt="QQ">
+                              <h6>快速登录</h6>
+                              <img src="../../assets/ellipsis.png" height="32" width="32" alt="其他方式">
+                              <img src="../../assets/google.png" height="32" width="32" alt="Google">
+                              <img src="../../assets/github.png" height="32" width="32" alt="github">
+                              <img src="../../assets/weibo.png" height="32" width="32" alt="微博">
+                              <img src="../../assets/wechat.png" height="32" width="32" alt="微信">
+                              <img src="../../assets/QQ.png" height="32" width="32" alt="QQ">
                         </div>
+                    </fieldset>
                 </form>
             </div>
         </div>
 
         <div id="forget-pass-view">
             <p>
-                <label for=""></label><br>
-                <input id="verificationCode" type="text">
+                <label for="verCode"></label><br>
+                <input id="verCode" type="text">
                 <button v-on:click="getVerificationCode" class="sendVerificationCode">获取验证码</button><br>
             </p>
         </div>
@@ -93,161 +92,146 @@
 </div>
 </template>
 
-<!--<script>-->
-    <!--export default {-->
-        <!--data() {-->
-            <!--return {-->
-                <!--userName: '',-->
-                <!--nameTip: '',-->
-                <!--telephone: '',-->
-                <!--telephoneTip: '',-->
-                <!--pass: '',-->
-                <!--passTip: '',-->
-                <!--email: '',-->
-                <!--emailTip: ''-->
-            <!--}-->
-        <!--},-->
+<script>
+    export default {
+      data () {
+        return {
+          userName: '',
+          nameTip: '',
+          telephone: '',
+          telephoneTip: '',
+          pass: '',
+          passTip: '',
+          email: '',
+          emailTip: ''
+        }
+      },
 
-        <!--methods: {-->
-            <!--showlLoginView: function() {-->
-                <!--var oCover = document.getElementById('cover');-->
-                <!--var oContainer = document.getElementById('container');-->
-                <!--var oLoginView = document.getElementById('login-view');-->
+      methods: {
+        /**
+         * 关闭登录窗口
+         * @return {[type]} [description]
+        */
+        closeWindow: function () {
+          var oContainer = document.getElementById('container')
+          var oCover = document.getElementById('cover')
 
-                <!--oCover.style.display = 'block';-->
-                <!--oContainer.style.display = 'block';-->
-                <!--oLoginView.style.display = 'block';-->
-            <!--},-->
+                //
+          oContainer.style.display = 'none'
+          oCover.style.display = 'none'
+        },
 
-            <!--/**-->
-             <!--* 关闭登录窗口-->
-             <!--* @return {[type]} [description]-->
-             <!--*/-->
-            <!--closeWindow: function() {-->
-                <!--var oContainer = document.getElementById('container');-->
-                <!--var oCover = document.getElementById('cover');-->
+        /**
+         * 用户验证
+         * @return {[type]} [description]
+        */
+        userVerification: function () {
+          var regName = /^[a-zA-z]\w{3,15}$/
 
-                <!--//-->
-                <!--oContainer.style.display = 'none';-->
-                <!--oCover.style.display = 'none';-->
-            <!--},-->
+          if (this.userName.length === 0) {
+            this.nameTip = '用户名不能为空'
+          } else if (!regName.test(this.userName)) {
+            this.nameTip = '字母、数字、下划线组成，字母开头，4-16位'
+          } else {
+            this.nameTip = ''
+          }
+        },
 
-            <!--/**-->
-             <!--* 用户验证-->
-             <!--* @return {[type]} [description]-->
-             <!--*/-->
-            <!--userVerification: function() {-->
-                <!--var regName = /^[a-zA-z]\w{3,15}$/;-->
+        /**
+         * 电话验证
+         * @return {[type]} [description]
+        */
+        telephoneVerification: function () {
+          var regPhone = /\d{11}/
 
-                <!--if (this.userName.length == 0) {-->
-                    <!--this.nameTip = '用户名不能为空';-->
-                <!--} else if (!regName.test(this.userName)) {-->
-                    <!--this.nameTip = '字母、数字、下划线组成，字母开头，4-16位';-->
-                <!--} else {-->
-                    <!--this.nameTip = '';-->
-                <!--}-->
-            <!--},-->
+          if (!regPhone.test(this.telephone)) {
+            this.telephoneTip = '请输入11位手机号'
+          } else {
+            this.telephoneTip = ''
+          }
+        },
 
-            <!--/**-->
-             <!--* 电话验证-->
-             <!--* @return {[type]} [description]-->
-             <!--*/-->
-            <!--telephoneVerification: function() {-->
-                <!--var regPhone = /\d{11}/;-->
+        /**
+         * 邮箱验证
+         * @return {[type]} [description]
+        */
+        emailVerification: function () {
+          var regEmail = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/
 
-                <!--if (!regPhone.test(this.telephone)) {   //11位手机号-->
-                    <!--this.telephoneTip = '请输入11位手机号';-->
-                <!--} else {-->
-                    <!--this.telephoneTip = '';-->
-                <!--}-->
-            <!--},-->
+          if (!regEmail.test(this.email)) {
+            this.emailTip = '邮箱格式不正确'
+          } else {
+            this.emailTip = ''
+          }
+        },
 
-            <!--/**-->
-             <!--* 邮箱验证-->
-             <!--* @return {[type]} [description]-->
-             <!--*/-->
-            <!--emailVerification: function() {-->
-                <!--var regEmail = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;-->
+        /**
+         * 密码验证
+         * @return {[type]} [description]
+        */
+        passVerification: function () {
+          if (this.pass.length === 0) {
+            this.passTip = '密码不能为空'
+          } else {
+            this.passTip = ''
+          }
+        },
 
-                <!--if (!regEmail.test(this.email)) {     //邮箱-->
-                    <!--this.emailTip = '邮箱格式不正确';-->
-                <!--} else {-->
-                    <!--this.emailTip = '';-->
-                <!--}-->
-            <!--},-->
+        /**
+         * 电话注册方式
+         * @return {[type]} [description]
+        */
+        telephoneRegister: function () {
+          var oHide = document.getElementById('hide')
+          var oShow = document.getElementById('show')
 
-            <!--/**-->
-             <!--* 密码验证-->
-             <!--* @return {[type]} [description]-->
-             <!--*/-->
-            <!--passVerification: function() {-->
-                <!--if (this.pass.length == 0) {-->
-                    <!--this.passTip = '密码不能为空';-->
-                <!--} else {-->
-                    <!--this.passTip = '';-->
-                <!--}-->
-            <!--},-->
+          oHide.style.display = 'none'
+          oShow.style.display = 'block'
+        },
 
-            <!--/**-->
-             <!--* 电话注册方式-->
-             <!--* @return {[type]} [description]-->
-             <!--*/-->
-            <!--telephoneRegister: function() {-->
-                <!--var oHide = document.getElementById('hide');-->
-                <!--var oShow = document.getElementById('show');-->
+        /**
+         * 邮箱注册方式
+         * @return {[type]} [description]
+        */
+        emailRegister: function () {
+          const oHide = document.getElementById('hide')
+          const oShow = document.getElementById('show')
 
-                <!--oHide.style.display = 'none';-->
-                <!--oShow.style.display = 'block';-->
-            <!--},-->
+          oHide.style.display = 'block'
+          oShow.style.display = 'none'
+        },
 
-            <!--/**-->
-             <!--* 邮箱注册方式-->
-             <!--* @return {[type]} [description]-->
-             <!--*/-->
-            <!--emailRegister: function() {-->
-                <!--var oHide = document.getElementById('hide');-->
-                <!--var oShow = document.getElementById('show');-->
+        /**
+         * 记住密码
+         * @return {[type]} [description]
+        */
+        rememberLoginStatus: function () {
 
-                <!--oHide.style.display = 'block';-->
-                <!--oShow.style.display = 'none';-->
-            <!--},-->
+        },
 
-            <!--/**-->
-             <!--* 记住密码-->
-             <!--* @return {[type]} [description]-->
-             <!--*/-->
-            <!--rememberLoginStatus: function() {-->
-                <!--//TODO:保存用户的信息-->
-            <!--},-->
+        /**
+         * 获取验证码
+         * @return {[type]} [description]
+        */
+        getVerificationCode: function () {
 
-            <!--/**-->
-             <!--* 获取验证码-->
-             <!--* @return {[type]} [description]-->
-             <!--*/-->
-            <!--getVerificationCode: function() {-->
-                <!--//TODO:向手机发送验证码-->
-            <!--},-->
-
-            <!--login: function() {-->
-                <!--//TODO:-->
-            <!--} -->
-        <!--} -->
-    <!--}-->
-<!--</script>-->
+        }
+      }
+    }
+</script>
 
 <style scoped>
-    .main{
-      display:none;
-    }
     #cover {
-        display: none;
-        height: 800px;
-        background: #333;
-        filter:alpha(opacity=70);
-        opacity: 0.7;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: #000;
+        filter:alpha(opacity=50);
+        opacity: 0.5;
     }
     #container {
-        display: none;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -261,11 +245,9 @@
         border: 0;
         outline: 0;
     }
-    #login-view {
-        display: none;
-    }
     .view-header {
         padding: 15px;
+        overflow: hidden;
         border-bottom: 1px solid #e5e5e5;
         min-height: 25px;;
         background: #f3f3f3;
@@ -273,7 +255,6 @@
         border-top-right-radius: 6px;
     }
     .header-title {
-        margin: 0;
         float: left;
         width: 200px;
         font-size: 18px;
@@ -281,27 +262,28 @@
         line-height: 25px;
     }
     .close {
-        float: right;
-        width: 16px;
-        height: 16px;
-        line-height: 25px;
-        font-size: 21px;
-        cursor: pointer;
-        background: url(../../assets/close.png);
-    }
+       float: right;
+       width: 16px;
+       height: 16px;
+       line-height: 25px;
+       font-size: 21px;
+       cursor: pointer;
+       background: url("../../assets/close.png");
+     }
     .view-content {
+        display: inline-block;
         text-align: center;
     }
-    form {
-        margin: 30px 65px;
-        padding: 10px 0 0;
+    .view-content form {
         float: left;
-        text-align: left;
+        margin: 10px 80px;
     }
-    legend {
-        margin: 0 auto;
-        color: #777;
-        font-size: 18px;
+    fieldset {
+        border: none;
+        margin: 20px auto;
+    }
+    legend{
+        margin: 10px auto;
     }
     p {
         margin: 14px 0;
@@ -313,23 +295,44 @@
         font-weight: bold;
         text-align: left;
     }
-    input[type="text"],
-    input[type="password"],
-    input[type="email"] {
-        display: block;
-        width: 284px;
-        height: 20px;
-        padding: 6px 12px;
+    input {
+        padding: 6px 8px;
         font-size: 14px;
-        line-height: 1.42858;
         color: #555;
         background: #fff;
         border: 1px solid #ccc;
         border-radius: 6px;
         box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
         -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-             -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-                transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+              -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+                 transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    }
+    input:focus {
+        padding: 6px 8px;
+        border-radius: 6px;
+        border-color: rgba(82, 168, 236, 0.8);
+        outline: 0;
+        outline: thin dotted \9;
+        /* IE6-9 */
+        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+           -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    }
+     input[type="text"],
+     input[type="password"],
+     input[type="email"] {
+         display: block;
+         width: 284px;
+         height: 34px;
+     }
+    input[type="search"] {
+        display: block;
+        width: 280px;
+        height: 30px;
+    }
+    input[type="search"]:focus {
+        width: 500px;
+        transition: width ease-in-out 0.2s;
     }
     span {
         display: block;
@@ -350,6 +353,7 @@
         display: inline-block;
         width: 100px;
         height: 34px;
+        text-align: center;
         border: 1px solid #ccc;
         border-top-right-radius: 6px;
         border-bottom-right-radius: 6px;
@@ -359,7 +363,6 @@
     #forget-pass-view {
         display: none;
         text-align: center;
-        display: none;
         position: absolute;
         left: 50%;
         top: 50%;
@@ -408,5 +411,4 @@
         float: right;
         cursor: pointer;
     }
-
 </style>
