@@ -12,8 +12,8 @@
               <input type="password" placeholder="密码">
         </p>
         <p>
-          <input type="checkbox" name="" id="zddl">自动登录
-          <router-link to="forget" class="pdForget themeColor">忘记密码？</router-link>
+          <input type="checkbox" name="" class="zddl">自动登录
+          <router-link to="/forget" class="pdForget themeColor">忘记密码？</router-link>
         </p>
         <input class="btn themeBgColor" type="submit" value="登录">
       </fieldset>
@@ -29,12 +29,12 @@
 </script>
 
 <style scoped>
-  #zddl{
+  .zddl{
     margin-left: 0px;
   }
   .login {
     margin-left: 70px;
-    margin-top: 30px;
+    margin-top: 70px;
     float: left;
     width: 300px;
     height: 320px;

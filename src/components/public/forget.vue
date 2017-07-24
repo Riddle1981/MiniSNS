@@ -11,28 +11,28 @@
                     <input v-on:click="findByTelephone" type="radio" name="findMethod" checked="true">用手机找回
                     <input v-on:click="findByEmail" type="radio" name="findMethod" id="">用email找回
                 </p>
-                <p id="find-by-telephone">
+                <p v-show="telInfo">
                     <label>手机号码</label>
                     <input class="input-text" type="text">
                 </p>
 
-                <p id="find-by-telephone">
+                <p v-show="telInfo">
                     <label>短信验证码</label>
                     <input class="verificationCode" type="text">
                     <button class="sendVerificationCode">获取验证码</button>
                 </p>
 
-                <p id="find-by-email">
+                <p v-show="emailInfo">
                     <label>Email</label>
                     <input class="input-text" type="email">
                 </p>
 
-                <p id="find-by-email">
+                <p v-show="emailInfo">
                     <label>验证码</label>
                     <input class="input-text" type="text">
                 </p>
 
-                <p id="find-by-email">
+                <p v-show="emailInfo">
                     <img src="" alt="验证码">
                 </p>
 
@@ -53,21 +53,22 @@
 
 <script>
     export default {
+      name: 'forget',
+      data () {
+        return {
+          telInfo: true,
+          emailInfo: false
+        }
+      },
       methods: {
         findByTelephone: function () {
-          var oShow = document.getElementById('find-by-telephone')
-          var oHide = document.getElementById('find-by-email')
-
-          oShow.style.display = 'block'
-          oHide.style.display = 'none'
+          this.telInfo = true
+          this.emailInfo = false
         },
 
         findByEmail: function () {
-          var oHide = document.getElementById('find-by-telephone')
-          var oShow = document.getElementById('find-by-email')
-
-          oHide.style.display = 'none'
-          oShow.style.display = 'block'
+          this.telInfo = false
+          this.emailInfo = true
         }
       }
     }

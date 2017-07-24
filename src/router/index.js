@@ -1,13 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import List from '../components/index/list'
+import main from '../components/index/main_page'
 import New from '../components/index/new'
 import hotTest from '../components/index/hottest'
 import unAnswered from '../components/index/unanswered'
 import Feed from '../components/index/feed'
 import Experts from '../components/index/experts'
 // import register from '../components/public/register'
-// import forget from '../components/public/forget'
+import forget from '../components/public/forget'
 
 Vue.use(Router)
 
@@ -15,8 +15,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'List',
-      component: List,
+      name: 'main_page',
+      component: main,
       children: [
         {
           path: '/',
@@ -49,16 +49,16 @@ export default new Router({
           component: Experts
         }
       ]
-    }
+    },
     // {
     //   path: '/',
     //   name: 'register',
     //   component: register
     // },
-    // {
-    //   path: '/forget',
-    //   name: 'forget',
-    //   component: forget
-    // }
+    {
+      path: '/forget',
+      name: '忘记密码',
+      component: forget
+    }
   ]
 })

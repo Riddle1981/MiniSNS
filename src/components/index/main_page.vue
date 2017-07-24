@@ -1,21 +1,25 @@
 <template lang="html">
-  <div class="list">
-    <ul class="select" @click="current">
-      <li><router-link to="/new">最新回答</router-link></li>
-      <li><router-link to="/hottest">最热回答</router-link></li>
-      <li><router-link to="/unanswered">等待回答</router-link></li>
-      <li><router-link to="/feed">最新动态</router-link></li>
-      <li><router-link to="/experts">付费问答</router-link></li>
-    </ul>
-    <router-view></router-view>
+  <div class="main_page">
+    <div class="list">
+      <ul class="select" @click="current">
+        <li><router-link to="/new">最新回答</router-link></li>
+        <li><router-link to="/hottest">最热回答</router-link></li>
+        <li><router-link to="/unanswered">等待回答</router-link></li>
+        <li><router-link to="/feed">最新动态</router-link></li>
+        <li><router-link to="/experts">付费问答</router-link></li>
+      </ul>
+      <router-view></router-view>
+    </div>
+    <vue-login></vue-login>
   </div>
 </template>
 
 <script>
 import myInput from './input.vue'
+import login from './login.vue'
 
 export default {
-  name: 'list',
+  name: 'main_page',
   data () {
     return {
     }
@@ -26,7 +30,8 @@ export default {
     }
   },
   components: {
-    vueInput: myInput
+    vueInput: myInput,
+    vueLogin: login
   }
 }
 </script>

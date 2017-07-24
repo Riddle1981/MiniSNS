@@ -10,7 +10,7 @@
         <div id="pic">
           <img class="pic" src="../../assets/picture.jpg">
         </div>
-        <div id="num">
+        <div class="num">
           <div class="msg">
             <p>{{following}}</p>
             <h2>关注</h2>
@@ -25,7 +25,7 @@
         <div id="nicename">
           <p>{{uname}}</p>
         </div>
-        <div id="myDatum">
+        <div class="myDatum">
           <ul >
             <li>&nbsp;&nbsp;&nbsp;职业:{{industry}}</li>
             <li>|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;居住地:{{domicile}}</li>
@@ -87,8 +87,8 @@
             <p id="spann">您还可以输入{{wordc}}字</p>
           </div>
           <div class="btn">
-            <button id="cancel">取消</button>
-            <button id="save">保存</button>
+            <button class="cancel">取消</button>
+            <button class="save">保存</button>
           </div>
         </fieldset>
       </form>
@@ -155,13 +155,13 @@
     height: 230px;
     /*以上为头像和粉丝关注数部分样式*/
   }
-  #myDatum{
+  .myDatum{
     margin-left: 20px;
     margin-top: 50px;
     height: 30px;
     /*以上为资料显示部分包含昵称样式*/
   }
-  #myDatum li{
+  .myDatum li{
     float:left;
     margin-left: 35px;
     font-weight: 500;
@@ -215,7 +215,7 @@
     font-size: 18px;
     color:#808080;
   }
-  #num{
+  .num{
     margin-top: 10px;
     margin-left: 15px;
   }
@@ -332,11 +332,11 @@
   #area{
     width: 680px;
   }
-  #cancel{
+  .cancel{
     background: #999999;
     /*取消*/
   }
-  #save{
+  .save{
     margin-left: 10px;
     background: #BE0000;
     /*保存*/
