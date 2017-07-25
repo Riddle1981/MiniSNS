@@ -1,7 +1,7 @@
 <template>
+  <div class="forget layout-center-645">
     <div class="forget-pass">
         <div class="forget-logo">
-          <img src="" alt="logo">
         </div>
         <form action="#" class="form">
             <fieldset>
@@ -36,7 +36,7 @@
                     <img src="" alt="验证码">
                 </p>
 
-                <input class="btn" type="submit" value="提交">
+                <input class="btn themeBgColor" type="submit" value="提交">
             </fieldset>
         </form>
         <div class="link">
@@ -47,8 +47,8 @@
                 <span>返回首页</span>
             </router-link>
         </div>
-
     </div>
+  </div>
 </template>
 
 <script>
@@ -74,118 +74,117 @@
     }
 </script>
 
-<style scoped>
-	.forget-pass {
-		height: 645px;
-		text-align: center;
-		background: #e8e8e8;
-	}
-	.forget-logo {
-    margin: 20px auto;
-		height: 100px;
-	}
-	.form {
-		display: inline-block;
-		text-align: center;
-		font-size: 14px;
-		background: #fff;
-	}
-	.fieldset {
-	    margin: 30px 50px;
-	    border: none;
-	  }
-	.legend {
-		display: block;
-		font-size: 18px;
-		line-height: 50px;
-		text-align: center;
-		margin: 20px auto;
-    font-size:18px;
-	}
-  p {
-    margin: 12px 0;
-  }
-	label {
-		display: block;
-		margin: 5px 0;
-		font-weight: bold;
-		text-align: left;
-	}
-	.input-text,
-	.verificationCode {
-		padding: 6px 12px;
-    font-size: 14px;
-    line-height: 1.42858;
-    color: #555;
-    background: #fff;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-         -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-            transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-	}
-	.input-text {
-		width: 450px;
-	}
-  input[type="radio"] {
-    margin: 10px 0px 10px 10px;
-  }
-  .verificationCode {
-    width: 350px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  input:focus {
-    border-color: rgba(82, 168, 236, 0.8);
-    outline: 0;
-    outline: thin dotted \9;
-    /* IE6-9 */
-    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-  }
-	.sendVerificationCode {
-<<<<<<< HEAD
-		width: 90px;
-		height: 35px;
-		text-align: center;
-		background: #fff;
-		border: 1px solid #ccc;
-		border-top-right-radius: 6px;
-		border-bottom-right-radius: 6px;
-		cursor: pointer;
-	}
-	.btn {
-		width: 480px;
-		margin: 10px 0;
-    text-align: center;
-    cursor: pointer;
-    border: 1px solid #008151;
-    padding: 6px 20px;
-    font-size: 14px;
-    border-radius: 6px;
-    color: #fff;
-    background: #009a61;
+<style scoped lang="less">
+  .layout-center-645{
+    .forget-pass {
+  		height: 645px;
+  		text-align: center;
+  	}
+  	.forget-logo {
+      margin: 20px auto;
+  		height: 100px;
+  	}
+  	.form {
+  		display: inline-block;
+  		text-align: center;
+  		font-size: 14px;
+  		background: #fff;
+  	}
+  	.fieldset {
+  	    margin: 30px 50px;
+  	    border: none;
+  	  }
+  	.legend {
+  		display: block;
+  		font-size: 18px;
+  		line-height: 50px;
+  		text-align: center;
+  		margin: 20px auto;
+      font-size:18px;
+  	}
+    p {
+      margin: 12px 0;
     }
-  .btn:hover {
-    padding: 6px 20px;
-    background: #006741;
-    border-color: #00432a;
-  }
-  .btn:active {
-    outline: 0;
-  }
-  #find-by-email {
-  	display: none;
-	}
-	.link {
-		margin: 10px 0;
-		text-align: center;
-	}
-	span {
-		margin: 0px 10px;
-		cursor: pointer;
-		color: #000;
+  	label {
+  		display: block;
+  		margin: 5px 0;
+  		font-weight: bold;
+  		text-align: left;
+  	}
+  	.input-text,
+  	.verificationCode {
+  		padding: 6px 12px;
+      font-size: 14px;
+      line-height: 1.42858;
+      color: #555;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+      -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+           -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+              transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+  	}
+  	.input-text {
+  		width: 450px;
+  	}
+    input[type="radio"] {
+      margin: 10px 0px 10px 10px;
+    }
+    .verificationCode {
+      width: 350px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    input:focus {
+      border-color: rgba(82, 168, 236, 0.8);
+      outline: 0;
+      outline: thin dotted \9;
+      /* IE6-9 */
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+    }
+  	.sendVerificationCode {
+  		width: 90px;
+  		height: 35px;
+  		text-align: center;
+  		background: #fff;
+  		border: 1px solid #ccc;
+  		border-top-right-radius: 6px;
+  		border-bottom-right-radius: 6px;
+  		cursor: pointer;
+  	}
+  	.btn {
+  		width: 480px;
+  		margin: 10px 0;
+      text-align: center;
+      cursor: pointer;
+      padding: 6px 20px;
+      font-size: 14px;
+      border-radius: 6px;
+      color: #fff;
+      border: 1px solid;
+      }
+    .btn:hover {
+      padding: 6px 20px;
+      background: #0073ce;
+      border-color: #0F88E8;
+    }
+    .btn:active {
+      outline: 0;
+    }
+    #find-by-email {
+    	display: none;
+  	}
+  	.link {
+  		margin: 10px 0;
+  		text-align: center;
+  	}
+  	span {
+  		margin: 0px 10px;
+  		cursor: pointer;
+  		color: #000;
+    }
   }
 </style>

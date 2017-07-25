@@ -62,8 +62,8 @@
   }
   .search{
     float: left;
-    margin-top: 15px;
-    margin-left: 240px;
+    margin-top: 9px;
+    margin-left: 180px;
     width: 402px;
     height: 32px;
     /*搜索*/
@@ -88,7 +88,6 @@
   #list{
     list-style: none;
     height: 24px;
-    display: inline-block;
     margin-top: 20px;
     margin-left: 150px;
     padding: 0px;

@@ -6,7 +6,7 @@ import hotTest from '../components/index/hottest'
 import unAnswered from '../components/index/unanswered'
 import Feed from '../components/index/feed'
 import Experts from '../components/index/experts'
-// import register from '../components/public/register'
+import register from '../components/public/register'
 import forget from '../components/public/forget'
 
 Vue.use(Router)
@@ -50,11 +50,11 @@ export default new Router({
         }
       ]
     },
-    // {
-    //   path: '/',
-    //   name: 'register',
-    //   component: register
-    // },
+    {
+      path: '/register',
+      name: '注册',
+      component: register
+    },
     {
       path: '/forget',
       name: '忘记密码',
