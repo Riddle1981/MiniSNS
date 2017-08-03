@@ -5,27 +5,53 @@
         <legend class="legend">账号登录</legend>
         <p>
           <label>手机或Email</label>
-          <input type="text" placeholder="11位手机号或Email">
+          <input v-model="vname" type="text" placeholder="11位手机号或Email">
         </p>
         <p>
               <label>密　码</label>
-              <input type="password" placeholder="密码">
+              <input v-model="vpsd" type="password" placeholder="密码">
         </p>
         <p>
           <input type="checkbox" name="" class="zddl">自动登录
           <router-link to="/forget" class="pdForget themeColor">忘记密码？</router-link>
         </p>
-        <input class="btn themeBgColor" type="submit" value="登录">
+        <input id="btn"  type="button" @click="vaildate" value="登录">
+        <p id="my" style="color:red;">{{hint}}</p>
       </fieldset>
     </form>
   </div>
 </template>
 
 <script>
-    export default {
-      methods: {
+  export default {
+    name: 'login',
+    data () {
+      return {
+        vname: '',
+        vpsd: '',
+        hint: '未登录'
+      }
+    },
+    methods: {
+      vaildate: function () {
+        var data = 'name=' + this.vname + '&psd=' + this.vpsd
+        var xmlhttp = new XMLHttpRequest()
+        if (window.XMLHttpRequest) {
+          xmlhttp = new XMLHttpRequest()
+        } else {
+         // xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+        }
+        xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            document.getElementById('my').innerHTML = xmlhttp.responseText
+          }
+        }
+        xmlhttp.open('POST', 'http://localhost:3000/get', true)
+        xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+        xmlhttp.send(data)
       }
     }
+  }
 </script>
 
 <style scoped>
@@ -90,7 +116,7 @@
     font-size: 14px;
     text-decoration: none;
   }
-  .btn {
+  #btn {
     display: inline-block;
     cursor: pointer;
     border: 1px solid transparent;
@@ -102,13 +128,14 @@
     border-radius: 4px;
     color: #fff;
     user-select: none;
-  }
-  .btn:hover {
-    padding: 6px 98px;
     background: #0073ce;
+  }
+  #btn:hover {
+    padding: 6px 98px;
+    background: #0F88E8;
     border-color: #0F88E8;
   }
-  .btn:active {
+  #btn:active {
     outline: 0;
   }
 </style>
