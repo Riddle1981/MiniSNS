@@ -26,8 +26,8 @@
        </li>
        <li class="item" >
          <img src="../../assets/user.png"/>
-         <router-link to="register">
-           <span>{{mystatus}}</span>
+         <router-link to="register" style="text-decoration: none;color: black">
+           <span >{{mystatus}}</span>
          </router-link>
        </li>
      </ul>
@@ -70,7 +70,7 @@
   #navigation{
     width: 100%;
     top:0px;
-    border-top: 3px solid #0F88E8;
+    border-top: 3px solid #40B883;
     height: 60px;
     position:absolute;
     margin-bottom: 50px;

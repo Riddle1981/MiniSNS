@@ -21,7 +21,7 @@
         </fieldset>
       </form>
     </div>
-    <div class="login" v-else>
+    <div class="logins" v-else>
       <div class="logined">
         <div class="Cover">
         </div>
@@ -58,13 +58,13 @@
       return {
         vname: '',
         vpsd: '',
-        hint: '未登录',
+        hint: '',
         seen: true,
-        pet: 'Lasped',
-        level: 'max',
-        fans: 56,
-        follow: 112,
-        content: 67
+        pet: '',
+        level: '',
+        fans: '',
+        follow: '',
+        content: ''
       }
     },
     methods: {
@@ -83,7 +83,6 @@
         xmlhttp.onreadystatechange = function () {
           if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
             that.seen = false
-            alert(that.seen)
             jsonwt = xmlhttp.responseText
             if (forget.checked === 'ture') {
               localStorage.token = jsonwt
@@ -185,7 +184,7 @@
     outline: 0;
   }
 
-  .login {
+  .logins {
     position: absolute;
     top: 10%;
     left: 70.7%;
@@ -197,7 +196,7 @@
   }
   .Cover {
     display: inline-block;
-    background: #009A4A;
+    background: #40B883;
     width: 288px;
     height: 100px;
   }
@@ -210,7 +209,6 @@
   }
   .Avatar img {
     /*background-image: url('../../assets/picture.jpg');*/
-    background: black;
     width: 80px;
     height: 80px;
     border-radius: 100px;
