@@ -1,16 +1,13 @@
 const Koa = require ('koa');
 const bodyParser = require('koa-bodyparser');
 const router = require('koa-router')();
-const cors = require('koa-cors');
-const app = new Koa();
-
-
+var cors = require('koa2-cors');
 const user = require('./controller/userdb.js');
+const jwt = require('./controller/jwt.js');
 
-
-
+const app = new Koa();
 app.use(bodyParser());
-app.use(cors());
+app.use(router.routes());
 
 app.use(async (ctx, next) => {
     console.log(`Process ${ctx.request.method} ${ctx.request.url}...`);
@@ -18,8 +15,7 @@ app.use(async (ctx, next) => {
 });
 
 
-
-
+var a = '';
 router.post('/get', async (ctx, next) => {
 
     var
@@ -31,7 +27,11 @@ router.post('/get', async (ctx, next) => {
         var upsd = userdata[0].psd;
         console.log(`signin with database: ${uname}, password: ${upsd}`);
         if (name === uname && password === upsd) {
-            ctx.response.body = 'success!';
+            var info = jwt.create(uname);
+            ctx.response.body = info;
+            ctx.response.set("Access-Control-Allow-Origin", '*');
+            console.log(typeof info);
+            console.log(info);
         } else {
             ctx.response.body = '用户名或密码错误';
         }
@@ -40,7 +40,15 @@ router.post('/get', async (ctx, next) => {
     }
 });
 
-app.use(router.routes());
+router.post('/token', async(ctx,next) => {
+  var token = ctx.request.body.token || ''
+  console.log(token)
+  console.log(typeof token)
+  var id = jwt.test(token)||''
+  ctx.response.body = id
+  ctx.response.set("Access-Control-Allow-Origin", '*');
+  console.log(id)
+})
 
 app.listen(3000);
 console.log("app started at port 3000");

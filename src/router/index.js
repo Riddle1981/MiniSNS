@@ -8,6 +8,7 @@ import Feed from '../components/index/feed'
 import Experts from '../components/index/experts'
 import register from '../components/public/register'
 import forget from '../components/public/forget'
+import user from '../components/public/user'
 
 Vue.use(Router)
 
@@ -59,6 +60,11 @@ export default new Router({
       path: '/forget',
       name: '忘记密码',
       component: forget
+    },
+    {
+      // 动态路由
+      path: '/user/:id',
+      component: user
     }
   ]
 })

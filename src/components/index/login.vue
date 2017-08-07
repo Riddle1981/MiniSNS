@@ -1,49 +1,95 @@
 <template>
-  <div class="login">
-    <form action="#" class="form">
-      <fieldset class="fieldset">
-        <legend class="legend">账号登录</legend>
-        <p>
-          <label>手机或Email</label>
-          <input v-model="vname" type="text" placeholder="11位手机号或Email">
-        </p>
-        <p>
-              <label>密　码</label>
-              <input v-model="vpsd" type="password" placeholder="密码">
-        </p>
-        <p>
-          <input type="checkbox" name="" class="zddl">自动登录
-          <router-link to="/forget" class="pdForget themeColor">忘记密码？</router-link>
-        </p>
-        <input id="btn"  type="button" @click="vaildate" value="登录">
-        <p id="my" style="color:red;">{{hint}}</p>
-      </fieldset>
-    </form>
+  <div id="side">
+    <div class="login" v-if="seen">
+      <form action="#" class="form">
+        <fieldset class="fieldset">
+          <legend class="legend">账号登录</legend>
+          <p>
+            <label>手机或Email</label>
+            <input v-model="vname" type="text" placeholder="11位手机号或Email">
+          </p>
+          <p>
+                <label>密　码</label>
+                <input v-model="vpsd" type="password" placeholder="密码">
+          </p>
+          <p>
+            <input type="checkbox" name="" class="zddl">自动登录
+            <router-link to="/forget" class="pdForget themeColor">忘记密码？</router-link>
+          </p>
+          <input id="btn"  type="button" @click="vaildate" value="登录">
+          <p id="my" style="color:red;">{{hint}}</p>
+        </fieldset>
+      </form>
+    </div>
+    <div class="login" v-else>
+      <div class="logined">
+        <div class="Cover">
+        </div>
+        <div class="Avatar">
+          <img>
+        </div>
+        <div class="message">
+          <span class="pet">{{ pet }}</span>
+          <span class="level">{{ level }}</span>
+        </div>
+        <div class="info">
+          <div class="span">
+            <span><strong>{{ fans }}</strong></span>
+            <span class="content">粉丝</span>
+          </div>
+          <div class="span">
+            <span><strong>{{ follow }}</strong></span>
+            <span class="content">关注</span>
+          </div>
+          <div class="span">
+            <span><strong>{{ content }}</strong></span>
+            <span class="content">文章</span>
+          </div>
+        </div>
+      </div>
+  </div>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'login',
+    name: 'side',
     data () {
       return {
         vname: '',
         vpsd: '',
-        hint: '未登录'
+        hint: '未登录',
+        seen: true,
+        pet: 'Lasped',
+        level: 'max',
+        fans: 56,
+        follow: 112,
+        content: 67
       }
     },
     methods: {
       vaildate: function () {
+        const that = this
         var data = 'name=' + this.vname + '&psd=' + this.vpsd
+        var forget = document.querySelector('input[type="checkbox"]')
         var xmlhttp = new XMLHttpRequest()
+        var jsonwt = 'hello world'
         if (window.XMLHttpRequest) {
           xmlhttp = new XMLHttpRequest()
         } else {
-         // xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+          // xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
         }
+
         xmlhttp.onreadystatechange = function () {
           if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-            document.getElementById('my').innerHTML = xmlhttp.responseText
+            that.seen = false
+            alert(that.seen)
+            jsonwt = xmlhttp.responseText
+            if (forget.checked === 'ture') {
+              localStorage.token = jsonwt
+            } else {
+              sessionStorage.token = jsonwt
+            }
           }
         }
         xmlhttp.open('POST', 'http://localhost:3000/get', true)
@@ -137,5 +183,89 @@
   }
   #btn:active {
     outline: 0;
+  }
+
+  .login {
+    position: absolute;
+    top: 10%;
+    left: 70.7%;
+    display: inline-block;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+  .Cover {
+    display: inline-block;
+    background: #009A4A;
+    width: 288px;
+    height: 100px;
+  }
+  .Avatar {
+    display: inline-block;
+    position: absolute;
+    top: 22%;
+    left: 104px;
+    z-index: 1;
+  }
+  .Avatar img {
+    /*background-image: url('../../assets/picture.jpg');*/
+    background: black;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+  }
+  .message {
+    display: inline-block;
+    margin-top: 32px;
+    display: block;
+    margin-right: 10px;
+    text-align: center;
+  }
+  .message .pet {
+    display: inline-block;
+    font-size: 20px;
+    margin-left: -10%;
+  }
+  .message .level {
+    display: inline-block;
+    padding-left: 6px;
+    padding-right: 3px;
+    color: #fff;
+    background: orange;
+    border-radius: 6px;
+    margin: 5px;
+  }
+  .info {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  }
+  .info .span {
+    float: left;
+    width: 30%;
+    height: 70px;
+    margin:0;
+  }
+  .info .span:nth-child(2) {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+  }
+  .info span{
+    display: inline-block;
+    font-size:20px;
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    line-height: 25px;
+    margin: 0;
+    border: 0;
+  }
+  .info .span .content{
+    display: inline-block;
+    font-size:13px;
+    text-align: center;
+    height: 20px;
+    line-height: 20px;
   }
 </style>
