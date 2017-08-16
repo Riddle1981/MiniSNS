@@ -9,6 +9,10 @@
 <script>
   import head from './components/public/Head.vue'
   import footer from './components/public/Footer.vue'
+  import store from './store/store.js'
+  window.onload = function () {
+    store.dispatch('test')
+  }
   export default {
     name: 'app',
     components: {

@@ -37,7 +37,8 @@
             <span><strong>{{ fans }}</strong></span>
             <span class="content">粉丝</span>
           </div>
-          <div class="span">
+          <div class="span
+">
             <span><strong>{{ follow }}</strong></span>
             <span class="content">关注</span>
           </div>
@@ -52,6 +53,7 @@
 </template>
 
 <script>
+  import store from '../../store/store.js'
   export default {
     name: 'side',
     data () {
@@ -59,12 +61,16 @@
         vname: '',
         vpsd: '',
         hint: '',
-        seen: true,
         pet: '',
         level: '',
         fans: '',
         follow: '',
         content: ''
+      }
+    },
+    computed: {
+      seen () {
+        return store.state.seen
       }
     },
     methods: {
@@ -82,6 +88,7 @@
 
         xmlhttp.onreadystatechange = function () {
           if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+            window.location.reload()
             that.seen = false
             jsonwt = xmlhttp.responseText
             if (forget.checked === 'ture') {

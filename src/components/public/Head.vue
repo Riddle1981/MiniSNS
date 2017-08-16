@@ -35,33 +35,19 @@
 </template>
 
 <script>
+  import store from '../../store/store.js'
   export default{
     name: 'navigation',
     data () {
       return {
-        mystatus: '登录/注册'
       }
     },
-    methods: {
-      testT: function () {
-        const that = this
-        var info = {}
-        var xmlHttp = new XMLHttpRequest()
-        var token = 'token=' + (localStorage.getItem('token') || sessionStorage.getItem('token') || '')
-        if (!window.XMLHttpRequest) {
-         // xmlHttp = new ActiveXObject('Microsoft.XMLHTTP')
-        }
-        xmlHttp.onreadystatechange = function () {
-          if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
-            info = JSON.parse(xmlHttp.responseText)
-            that.mystatus = info.iss
-          }
-        }
-        xmlHttp.open('POST', 'http://localhost:3000/token', 'ture')
-        xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
-        xmlHttp.send(token)
+    computed: {
+      mystatus () {
+        return store.state.mystatus
       }
-    }
+    },
+    methods: {}
   }
 
 </script>
