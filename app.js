@@ -3,6 +3,7 @@ const bodyParser = require('koa-bodyparser');
 const router = require('koa-router')();
 var cors = require('koa2-cors');
 const user = require('./controller/userdb.js');
+const userinfo = require('./controller/userinfo.js');
 const jwt = require('./controller/jwt.js');
 
 const app = new Koa();
@@ -15,7 +16,6 @@ app.use(async (ctx, next) => {
 });
 
 
-var a = '';
 router.post('/get', async (ctx, next) => {
 
     var
@@ -44,10 +44,20 @@ router.post('/token', async(ctx,next) => {
   var token = ctx.request.body.token || ''
   console.log(token)
   console.log(typeof token)
-  var id = jwt.test(token)||''
-  ctx.response.body = id
+  var tk = jwt.test(token)||''
+  var user = await userinfo.get(tk.iss)
+  var info = {
+    id: tk.iss,
+    birth: user[0].birth,
+    follower: user[0].follower,
+    following: user[0].following,
+    industry: user[0].industry,
+    anum: user[0].anum,
+    autograph: user[0].autograph
+  }
+  ctx.response.body = info
   ctx.response.set("Access-Control-Allow-Origin", '*');
-  console.log(id)
+  console.log(info)
 })
 
 app.listen(3000);

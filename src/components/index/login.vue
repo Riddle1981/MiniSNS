@@ -34,16 +34,16 @@
         </div>
         <div class="info">
           <div class="span">
-            <span><strong>{{ fans }}</strong></span>
+            <span><strong>{{ follower }}</strong></span>
             <span class="content">粉丝</span>
           </div>
           <div class="span
 ">
-            <span><strong>{{ follow }}</strong></span>
+            <span><strong>{{ following }}</strong></span>
             <span class="content">关注</span>
           </div>
           <div class="span">
-            <span><strong>{{ content }}</strong></span>
+            <span><strong>{{ anum }}</strong></span>
             <span class="content">文章</span>
           </div>
         </div>
@@ -71,6 +71,15 @@
     computed: {
       seen () {
         return store.state.seen
+      },
+      follower () {
+        return store.state.follower
+      },
+      following () {
+        return store.state.following
+      },
+      anum () {
+        return store.state.anum
       }
     },
     methods: {

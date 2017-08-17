@@ -11,7 +11,10 @@ export default{
       if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
         info = JSON.parse(xmlHttp.responseText)
         store.state.mystatus = info
-        commit('test', info.iss)
+        commit('id', info)
+        commit('following', info)
+        commit('follower', info)
+        commit('anum', info)
         commit('seen')
       }
     }
