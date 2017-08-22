@@ -21,39 +21,42 @@
         </fieldset>
       </form>
     </div>
-    <div class="logins" v-else>
-      <div class="logined">
-        <div class="Cover">
-        </div>
-        <div class="sculpture">
-          <img src="../../../user/2.jpg" height="80" width="80">
-        </div>
-        <div class="message">
-          <span class="pet">{{ pet }}</span>
-          <span class="level">{{ level }}</span>
-        </div>
-        <div class="info">
-          <div class="span">
-            <span><strong>{{ follower }}</strong></span>
-            <span class="content">粉丝</span>
+    <div id="rightContent" v-else >
+      <div class="logins" >
+        <div class="logined">
+          <div class="Cover">
           </div>
-          <div class="span
-">
-            <span><strong>{{ following }}</strong></span>
-            <span class="content">关注</span>
+          <div class="sculpture">
+            <img src="../../../user/2.jpg" height="80" width="80">
           </div>
-          <div class="span">
-            <span><strong>{{ anum }}</strong></span>
-            <span class="content">文章</span>
+          <div class="message">
+            <span class="pet">{{ pet }}</span>
+            <span class="level">{{ level }}</span>
+          </div>
+          <div class="info">
+            <div class="span">
+              <span><strong>{{ follower }}</strong></span>
+              <span class="content">粉丝</span>
+            </div>
+            <div class="span">
+              <span><strong>{{ following }}</strong></span>
+              <span class="content">关注</span>
+            </div>
+            <div class="span">
+              <span><strong>{{ anum }}</strong></span>
+              <span class="content">文章</span>
+            </div>
           </div>
         </div>
       </div>
-  </div>
+      <commend></commend>
+    </div>
   </div>
 </template>
 
 <script>
   import store from '../../store/store.js'
+  import commend from './commend.vue'
   export default {
     name: 'side',
     data () {
@@ -111,6 +114,9 @@
         xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
         xmlhttp.send(data)
       }
+    },
+    components: {
+      commend: commend
     }
   }
 </script>
@@ -199,11 +205,13 @@
   #btn:active {
     outline: 0;
   }
-
-  .logins {
+  #rightContent {
+    width: 235px;
     position: absolute;
     top: 10%;
     left: 70.7%;
+  }
+  .logins {
     display: inline-block;
     margin-top: 30px;
     text-align: center;
@@ -213,24 +221,18 @@
   .Cover {
     display: inline-block;
     background: #40B883;
-    width: 288px;
-    height: 100px;
+    width: 235px;
+    height: 80px;
   }
   .sculpture{
     position: absolute;
-    top: 20%;
+    top: 10%;
     left: 50%;
     margin-left: -40px;
     z-index: 1;
   }
   .sculpture img{
     border-radius: 50%;
-  }
-  .Avatar img {
-    /*background-image: url('../../assets/picture.jpg');*/
-    width: 80px;
-    height: 80px;
-    border-radius: 100px;
   }
   .message {
     display: inline-block;
