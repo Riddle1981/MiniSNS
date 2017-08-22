@@ -5,6 +5,7 @@ vue.use(vuex)
 export default new vuex.Store({
   state: {
     mystatus: '登录/注册',
+    login: true,
     seen: true,
     following: 0,
     follower: 0,
@@ -29,6 +30,9 @@ export default new vuex.Store({
     },
     seen (state) {
       state.seen = false
+    },
+    login (state) {
+      state.login = false
     }
   },
   getters: {

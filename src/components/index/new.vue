@@ -48,6 +48,17 @@ export default {
           tags: [
             'javascript'
           ]
+        },
+        info_4: {
+          votes: 6,
+          answer: 0,
+          view: 102,
+          author: 'wy2016',
+          time: '7分钟前',
+          content: 'uc浏览器打开app',
+          tags: [
+            'javascript'
+          ]
         }
       }
     }

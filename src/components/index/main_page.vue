@@ -53,10 +53,11 @@ export default {
           margin-bottom: -1px;
           a{
             display: block;
+            font-weight: 700;
             padding: 10px 15px;
             text-decoration: none;
             outline: 0;
-            color: #0F88E8;
+            color: #40B883;
           }
           a:hover,a:focus{
             color:#555;

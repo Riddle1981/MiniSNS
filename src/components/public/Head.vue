@@ -14,7 +14,9 @@
      <ul id="list">
        <li class="item">
          <img src="../../assets/home.png"/>
-         <span >首页</span>
+         <router-link to="/" style="text-decoration: none;color: black">
+           <span >首页</span>
+         </router-link>
        </li>
        <li class="item">
          <img src="../../assets/edit.png"/>
@@ -24,9 +26,15 @@
          <img src="../../assets/message2.png"/>
          <span>消息</span>
        </li>
-       <li class="item" >
+       <li v-if="login" class="item" >
          <img src="../../assets/user.png"/>
          <router-link to="register" style="text-decoration: none;color: black">
+           <span >{{mystatus}}</span>
+         </router-link>
+       </li>
+       <li v-else class="item" >
+         <img src="../../assets/user.png"/>
+         <router-link :to="'/user/' + mystatus" style="text-decoration: none;color: black">
            <span >{{mystatus}}</span>
          </router-link>
        </li>
@@ -45,6 +53,9 @@
     computed: {
       mystatus () {
         return store.state.mystatus
+      },
+      login () {
+        return store.state.login
       }
     },
     methods: {}

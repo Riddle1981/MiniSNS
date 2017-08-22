@@ -6,45 +6,48 @@
 <template>
   <div id="myblog">
     <div id="blog">
-
+      <blog-model></blog-model>
+      <blog-model></blog-model>
+      <blog-model></blog-model>
     </div>
     <div id="other">
       <div id="visitor" class="ljx-listOther">
         <p>最近来访<span>({{visitor}})</span></p>
         <hr/>
         <div id="myvisitor">
-          <img src="../../assets/1.jpg">
-          <img src="../../assets/2.jpg">
-          <img src="../../assets/3.jpg">
-          <img src="../../assets/4.jpg">
+          <img src="../../../user/1.jpg">
+          <img src="../../../user/2.jpg">
+          <img src="../../../user/3.jpg">
+          <img src="../../../user/4.jpg">
         </div>
       </div>
       <div id="following" class="ljx-listOther">
         <p>我的关注<span>({{following}})</span></p>
         <hr/>
         <div id="myfollowing">
-          <img src="../../assets/8.jpg">
-          <img src="../../assets/2.jpg">
-          <img src="../../assets/7.jpg">
-          <img src="../../assets/4.jpg">
-          <img src="../../assets/1.jpg">
-          <img src="../../assets/5.jpg">
-          <img src="../../assets/3.jpg">
-          <img src="../../assets/6.jpg">
+          <img src="../../../user/8.jpg">
+          <img src="../../../user/2.jpg">
+          <img src="../../../user/7.jpg">
+          <img src="../../../user/4.jpg">
+
+          <img src="../../../user/1.jpg">
+          <img src="../../../user/5.jpg">
+          <img src="../../../user/3.jpg">
+          <img src="../../../user/6.jpg">
         </div>
       </div>
       <div id="follower" class="ljx-listOther">
         <p>我的粉丝<span>({{follower}})</span></p>
         <hr/>
         <div id="myfollwer">
-          <img src="../../assets/7.jpg">
-          <img src="../../assets/2.jpg">
-          <img src="../../assets/4.jpg">
-          <img src="../../assets/2.jpg">
-          <img src="../../assets/3.jpg">
-          <img src="../../assets/1.jpg">
-          <img src="../../assets/5.jpg">
-          <img src="../../assets/8.jpg">
+          <img src="../../../user/7.jpg">
+          <img src="../../../user/2.jpg">
+          <img src="../../../user/4.jpg">
+          <img src="../../../user/2.jpg">
+          <img src="../../../user/3.jpg">
+          <img src="../../../user/1.jpg">
+          <img src="../../../user/5.jpg">
+          <img src="../../../user/8.jpg">
         </div>
       </div>
     </div>
@@ -52,6 +55,8 @@
 </template>
 
 <script>
+  import bmodel from './blog.vue'
+
   export default {
     name: 'hello',
     data () {
@@ -60,6 +65,9 @@
         following: '200',
         follower: '200'
       }
+    },
+    components: {
+      blogModel: bmodel
     }
 
   }

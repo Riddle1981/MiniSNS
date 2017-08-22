@@ -16,6 +16,7 @@ export default{
         commit('follower', info)
         commit('anum', info)
         commit('seen')
+        commit('login')
       }
     }
     xmlHttp.open('POST', 'http://localhost:3000/token', 'ture')

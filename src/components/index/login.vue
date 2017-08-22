@@ -25,8 +25,8 @@
       <div class="logined">
         <div class="Cover">
         </div>
-        <div class="Avatar">
-          <img>
+        <div class="sculpture">
+          <img src="../../../user/2.jpg" height="80" width="80">
         </div>
         <div class="message">
           <span class="pet">{{ pet }}</span>
@@ -216,12 +216,15 @@
     width: 288px;
     height: 100px;
   }
-  .Avatar {
-    display: inline-block;
+  .sculpture{
     position: absolute;
-    top: 22%;
-    left: 104px;
+    top: 20%;
+    left: 50%;
+    margin-left: -40px;
     z-index: 1;
+  }
+  .sculpture img{
+    border-radius: 50%;
   }
   .Avatar img {
     /*background-image: url('../../assets/picture.jpg');*/

@@ -64,6 +64,7 @@ export default new Router({
     {
       // 动态路由
       path: '/user/:id',
+      name: user,
       component: user
     }
   ]
