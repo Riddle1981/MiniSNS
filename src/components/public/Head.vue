@@ -20,7 +20,7 @@
        </li>
        <li class="item">
          <img src="../../assets/edit.png"/>
-         <span>发帖</span>
+         <router-link to="post">发帖</router-link>
        </li>
        <li class="item">
          <img src="../../assets/message2.png"/>
