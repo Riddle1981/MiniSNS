@@ -9,6 +9,7 @@ import Experts from '../components/index/experts'
 import register from '../components/public/register'
 import forget from '../components/public/forget'
 import user from '../components/public/user'
+import post from '../components/public/post'
 
 Vue.use(Router)
 
@@ -66,6 +67,11 @@ export default new Router({
       path: '/user/:id',
       name: user,
       component: user
+    },
+    {
+      path: '/post',
+      name: '发帖',
+      component: post
     }
   ]
 })
