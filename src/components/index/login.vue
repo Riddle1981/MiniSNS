@@ -131,7 +131,6 @@
     float: left;
     width: 300px;
     height: 320px;
-    /*border: 1px solid #ccc;*/
     text-align: center;
     border-radius: 6px;
     border: 1px solid #ccc;
@@ -141,9 +140,12 @@
   }
   .fieldset{
     border: none;
+    text-align: left;
   }
   .legend {
-    margin: 20px auto;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
   }
   p {
     margin: 10px 0;
@@ -153,7 +155,6 @@
     margin: 8px 0;
     font-weight: bold;
     font-size: 14px;
-    text-align: left;
   }
   input[type="text"],
   input[type="password"],
@@ -175,7 +176,7 @@
   }
   .login input[type="checkbox"] {
     margin-top: 10px;
-    margin-left: -70px;
+    margin-right: 5px;
   }
   .pdForget {
     float: right;
