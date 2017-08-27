@@ -5,7 +5,7 @@
 **/
 <template>
   <div class="navigation" id="navigation">
-     <div class="logo" @click="testT">
+     <div class="logo">
        <img id="logo" src="../../assets/logo.png">
      </div>
      <div class="search">

@@ -8,7 +8,7 @@
     <div id="head">
       <div id="sculpture">
         <div id="pic">
-          <img class="pic" src="../../assets/picture.jpg">
+          <img class="pic" src="../../../user/2.jpg">
         </div>
         <div class="num">
           <div class="msg">

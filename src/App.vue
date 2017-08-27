@@ -2,7 +2,7 @@
   <div id="app">
     <myhead></myhead>
     <router-view></router-view>
-    <myfooter></myfooter>
+    <myfooter :message="hello" @sendToP="hi"></myfooter>
   </div>
 </template>
 
@@ -15,9 +15,19 @@
   }
   export default {
     name: 'app',
+    data () {
+      return {
+        hello: '123'
+      }
+    },
     components: {
       myhead: head,
       myfooter: footer
+    },
+    methods: {
+      hi: function (six) {
+        console.log(six)
+      }
     }
   }
 </script>

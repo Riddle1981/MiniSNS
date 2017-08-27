@@ -55,11 +55,37 @@ export default {
           view: 102,
           author: 'wy2016',
           time: '7分钟前',
-          content: 'uc浏览器打开app',
+          content: 'golang struct 定义类型用哪种方法？',
           tags: [
             'javascript'
           ]
         }
+      },
+      info_5: {
+        votes: 1,
+        answer: 0,
+        view: 23,
+        author: 'Whalefallsea',
+        time: '1分钟前',
+        content: 'elementUI表格动态变色问题',
+        tags: [
+          'elementU-ui',
+          'vue.js',
+          'iview'
+        ]
+      },
+      info_6: {
+        votes: 1,
+        answer: 0,
+        view: 23,
+        author: 'Whalefallsea',
+        time: '1分钟前',
+        content: 'react native image 去除自动缓存？',
+        tags: [
+          'elementU-ui',
+          'vue.js',
+          'iview'
+        ]
       }
     }
   },
