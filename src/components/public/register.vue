@@ -116,9 +116,9 @@
           var oContainer = document.getElementById('container')
           var oCover = document.getElementById('cover')
 
-                //
           oContainer.style.display = 'none'
           oCover.style.display = 'none'
+          history.back()
         },
 
         /**
@@ -221,194 +221,196 @@
 </script>
 
 <style scoped>
-    #cover {
-        position: fixed;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: #000;
-        filter:alpha(opacity=50);
-        opacity: 0.5;
-    }
-    #container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 900px;
-        height: 560px;
-        margin-left: -450px;
-        margin-top: -280px;
-        z-index: 1050;
-        background: #fff;
-        border-radius: 6px;
-        border: 0;
-        outline: 0;
-    }
-    .view-header {
-        padding: 15px;
-        overflow: hidden;
-        border-bottom: 1px solid #e5e5e5;
-        min-height: 25px;;
-        background: #f3f3f3;
-        border-top-left-radius: 6px;
-        border-top-right-radius: 6px;
-    }
-    .header-title {
-        float: left;
-        width: 200px;
-        font-size: 18px;
-        font-weight: 500;
-        line-height: 25px;
-    }
-    .close {
-       float: right;
-       width: 16px;
-       height: 16px;
-       line-height: 25px;
-       font-size: 21px;
-       cursor: pointer;
-       background: url("../../assets/close.png");
-     }
-    .view-content {
-        display: inline-block;
-        text-align: center;
-    }
-    .view-content form {
-        float: left;
-        margin: 10px 80px;
-    }
-    fieldset {
-        border: none;
-        margin: 20px auto;
-    }
-    legend{
-        margin: 10px auto;
-    }
-    p {
-        margin: 14px 0;
-    }
-    label {
-        display: inline-block;
-        margin: 8px 0;
-        font-size: 14px;
-        font-weight: bold;
-        text-align: left;
-    }
-    input {
-        padding: 6px 8px;
-        font-size: 14px;
-        color: #555;
-        background: #fff;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-        -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-              -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-                 transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    }
-    input:focus {
-        padding: 6px 8px;
-        border-radius: 6px;
-        border-color: rgba(82, 168, 236, 0.8);
-        outline: 0;
-        outline: thin dotted \9;
-        /* IE6-9 */
-        -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-           -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-                 box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
-    }
-     input[type="text"],
-     input[type="password"],
-     input[type="email"] {
-         display: block;
-         width: 284px;
-         height: 34px;
-     }
-    input[type="search"] {
-        display: block;
-        width: 280px;
-        height: 30px;
-    }
-    input[type="search"]:focus {
-        width: 500px;
-        transition: width ease-in-out 0.2s;
-    }
-    span {
-        display: block;
-        font-size: 12px;
-        color: #F00;
-        height: 14px;
-    }
-    #hide {
-        display: none;
-    }
-    #verificationCode {
-        display: inline-block;
-        width: 180px;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-    .sendVerificationCode {
-        display: inline-block;
-        width: 100px;
-        height: 34px;
-        text-align: center;
-        border: 1px solid #ccc;
-        border-top-right-radius: 6px;
-        border-bottom-right-radius: 6px;
-        cursor: pointer;
-        background: #fff;
-    }
-    #forget-pass-view {
-        display: none;
-        text-align: center;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        width: 400px;
-        height: 280px;
-        margin-top: -140px;
-        margin-left: -200px;
-        background: #fff;
-    }
-    input[type="checkbox"] {
-        margin-top: 10px;
-    }
-    #container .pdForget {
-        float: right;
-        line-height: 35px;
-        color: #006633;
-        font-size: 14px;
-        text-decoration: none;
-    }
-    .btn {
-        display: inline-block;
-        float: right;
-        text-align: center;
-        cursor: pointer;
-        border: 1px solid #008151;
-        white-space: nowrap;
-        padding: 6px 20px;
-        font-size: 14px;
-        border-radius: 6px;
-        color: #fff;
-        background: #009a61;
-    }
-    .btn:hover {
-        padding: 6px 20px;
-        background: #006741;
-        border-color: #00432a;
-    }
-    .btn:active {
-        outline: 0;
-    }
-    .quick-logon {
-        margin-top: 50px;
-    }
-    img {
-        margin: 0 5px;
-        float: right;
-        cursor: pointer;
-    }
+#cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #000;
+    filter:alpha(opacity=50);
+    opacity: 0.5;
+}
+#container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 900px;
+    height: 560px;
+    margin-left: -450px;
+    margin-top: -280px;
+    z-index: 1050;
+    background: #fff;
+    border-radius: 6px;
+    border: 0;
+    outline: 0;
+}
+.view-header {
+    padding: 15px;
+    overflow: hidden;
+    border-bottom: 1px solid #e5e5e5;
+    min-height: 25px;;
+    background: #f3f3f3;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+.header-title {
+    float: left;
+    width: 200px;
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+.close {
+   float: right;
+   width: 16px;
+   height: 16px;
+   line-height: 25px;
+   font-size: 21px;
+   cursor: pointer;
+   background: url("../../assets/close.png");
+}
+.view-content {
+    display: inline-block;
+}
+.view-content form {
+    float: left;
+    margin-left: 90px;
+}
+fieldset {
+    border: none;
+    text-align: left;
+    margin: 20px auto;
+}
+legend{
+  height: 50px;
+  line-height: 50px;
+  margin: 0 auto;
+}
+p {
+    margin: 14px 0;
+}
+label {
+    display: block;
+    margin: 8px 0;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+}
+input {
+    padding: 6px 8px;
+    font-size: 14px;
+    color: #555;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+          -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+             transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+input:focus {
+    border-color: rgba(82, 168, 236, 0.8);
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+       -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+             box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+}
+ input[type="text"],
+ input[type="password"],
+ input[type="email"] {
+     display: block;
+     width: 284px;
+     height: 34px;
+ }
+input[type="search"] {
+    display: block;
+    width: 280px;
+    height: 30px;
+}
+input[type="search"]:focus {
+    width: 500px;
+    transition: width ease-in-out 0.2s;
+}
+span {
+    display: block;
+    font-size: 12px;
+    color: #F00;
+    height: 14px;
+}
+#hide {
+    display: none;
+}
+#verificationCode {
+    display: inline-block;
+    width: 180px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.sendVerificationCode {
+    display: inline-block;
+    width: 100px;
+    height: 34px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    cursor: pointer;
+    background: #fff;
+}
+#forget-pass-view {
+    display: none;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 400px;
+    height: 280px;
+    margin-top: -140px;
+    margin-left: -200px;
+    background: #fff;
+}
+input[type="checkbox"] {
+    margin-top: 10px;
+}
+#container .pdForget {
+    float: right;
+    line-height: 35px;
+    color: #006633;
+    font-size: 14px;
+    text-decoration: none;
+}
+.btn {
+    display: inline-block;
+    float: right;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #008151;
+    white-space: nowrap;
+    padding: 6px 20px;
+    font-size: 14px;
+    border-radius: 6px;
+    color: #fff;
+    background: #009a61;
+}
+.btn:hover {
+    padding: 6px 20px;
+    background: #006741;
+    border-color: #00432a;
+}
+.btn:active {
+    outline: 0;
+}
+.quick-logon {
+    margin-top: 50px;
+}
+img {
+    margin: 0 5px;
+    float: right;
+    cursor: pointer;
+}
 </style>

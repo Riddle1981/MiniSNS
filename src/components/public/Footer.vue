@@ -46,14 +46,14 @@
   </div>
 </template>
 <script>
-    export default{
-      props: ['message'],
-      methods: {
-        sendd: function () {
-          this.$emit('sendToP', 'data')
-        }
+  export default{
+    props: ['message'],
+    methods: {
+      sendd: function () {
+        this.$emit('sendToP', 'data')
       }
     }
+  }
 </script>
 
 <style scoped>

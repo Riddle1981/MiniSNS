@@ -5,7 +5,7 @@
 **/
 <template>
   <div class="navigation" id="navigation">
-     <div class="logo">
+     <div class="logo" >
        <img id="logo" src="../../assets/logo.png">
      </div>
      <div class="search">
@@ -19,8 +19,8 @@
          </router-link>
        </li>
        <li class="item">
-         <img src="../../assets/edit.png"/>
-         <span>发帖</span>
+         <img src="../../assets/edit.png" style="text-decoration: none;color: black"/>
+         <router-link to="post">发帖</router-link>
        </li>
        <li class="item">
          <img src="../../assets/message2.png"/>
