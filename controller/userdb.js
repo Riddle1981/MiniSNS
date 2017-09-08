@@ -16,7 +16,7 @@ var sequelize = new Sequelize(config.database, config.username, config.password,
     }
 });
 
-//定义模型Pet，告诉Sequelize如何映射数据库表：
+//定义模型User，告诉Sequelize如何映射数据库表：
 var User = sequelize.define('user', {
     uid: {
         type: Sequelize.STRING(50),
@@ -30,13 +30,14 @@ var User = sequelize.define('user', {
 
 //写入数据
 var now = Date.now();
-var createUser = async (name,psd) => {
-    var dog = await User.create({
+var createUser = async (uname,upsd) => {
+    console.log(uname+'123'+upsd);
+    var users = await User.create({
         uid: 'd-' + now,
-        name: name,
-        psd: psd
+        name: uname,
+        psd: upsd
     });
-    console.log('created: ' + JSON.stringify(dog));
+    console.log('created: ' + JSON.stringify(users));
 };
 
 

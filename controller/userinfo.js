@@ -36,11 +36,9 @@ var UserInfo = sequelize.define('userinfo', {
 
 //写入数据
 var now = Date.now();
-var createUser = async (name,psd) => {
+var createUser = async (name) => {
   var user = await UserInfo.create({
-    uid: 'd-' + now,
-    name: name,
-    psd: psd
+    name: name
   });
   console.log('created: ' + JSON.stringify(user));
 };

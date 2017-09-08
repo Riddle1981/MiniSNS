@@ -23,5 +23,54 @@ export default{
     xmlHttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     xmlHttp.send(token)
     return info
+  },
+  vaildate ({commit}) {
+    var data = 'name=' + store.state.vname + '&psd=' + store.state.vpsd
+    var xmlhttp = new XMLHttpRequest()
+    var jsonwt = 'hello world'
+    if (window.XMLHttpRequest) {
+      xmlhttp = new XMLHttpRequest()
+    } else {
+      // xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }
+
+    xmlhttp.onreadystatechange = function () {
+      if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+        window.location.href = '/'
+        commit('seen')
+        jsonwt = xmlhttp.responseText
+        if (store.state.remember === 'ture') {
+          localStorage.token = jsonwt
+        } else {
+          sessionStorage.token = jsonwt
+        }
+      }
+    }
+    xmlhttp.open('POST', 'http://localhost:3000/get', true)
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+    xmlhttp.send(data)
+  },
+  email ({commit}) {
+    var data = 'email=' + store.state.email +
+      '&psd=' + store.state.psd +
+      '&name=' + store.state.email
+    var xmlhttp = new XMLHttpRequest()
+    if (window.XMLHttpRequest) {
+      xmlhttp = new XMLHttpRequest()
+    } else {
+      // xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+    }
+
+    xmlhttp.onreadystatechange = function () {
+      if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+        if (xmlhttp.responseText) {
+          alert(' 验证成功')
+        }
+      }
+    }
+    xmlhttp.open('POST', 'http://localhost:3000/emails', true)
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
+    xmlhttp.send(data)
+    alert(data.email)
   }
 }

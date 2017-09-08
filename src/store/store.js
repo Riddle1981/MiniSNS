@@ -12,7 +12,13 @@ export default new vuex.Store({
     anum: 0,
     birth: '',
     industry: '',
-    autograph: ''
+    autograph: '',
+    vname: '',
+    vpsd: '',
+    remember: false,
+    email: '',
+    name: '',
+    psd: ''
   },
   actions,
   mutations: {
@@ -33,6 +39,20 @@ export default new vuex.Store({
     },
     login (state) {
       state.login = false
+    },
+    vname (state, name) {
+      state.vname = name
+    },
+    vpsd (state, psd) {
+      state.vpsd = psd
+    },
+    rememer (state, bool) {
+      state.remember = bool
+    },
+    register (state, user) {
+      state.name = user.name
+      state.psd = user.psd
+      state.email = user.email
     }
   },
   getters: {

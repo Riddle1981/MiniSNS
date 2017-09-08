@@ -43,7 +43,7 @@
                             <span>{{ passTip }}</span>
                         </p>
 
-                        <input class="btn" type="submit" value="注册">
+                        <input class="btn" type="submit" value="注册" @click="register">
                     </fieldset>
                 </form>
 
@@ -52,12 +52,12 @@
                         <legend>登录</legend>
                         <p>
                             <label>手机或Email</label><br>
-                            <input type="text" placeholder="11位手机号或Email">
+                            <input v-model='name' type="text" placeholder="11位手机号或Email">
                         </p>
 
                         <p>
                             <label>密　码</label>
-                            <input type="password" placeholder="密码">
+                            <input v-model="psd" type="password" placeholder="密码">
                         </p>
 
                         <p>
@@ -65,7 +65,7 @@
                             <router-link to="forget" class="pdForget">忘记密码？</router-link>
                         </p>
 
-                        <input class="btn" type="submit" value="登录">
+                        <input class="btn" type="submit" value="登录" @click="vaildate">
 
                         <div class="quick-logon">
                               <h6>快速登录</h6>
@@ -93,6 +93,7 @@
 </template>
 
 <script>
+    import store from '../../store/store.js'
     export default {
       data () {
         return {
@@ -103,11 +104,21 @@
           pass: '',
           passTip: '',
           email: '',
-          emailTip: ''
+          emailTip: '',
+          name: '',
+          psd: ''
         }
       },
-
       methods: {
+        register: function () {
+          var users = {
+            email: this.email,
+            psd: this.pass,
+            name: this.userName
+          }
+          store.commit('register', users)
+          store.dispatch('email')
+        },
         /**
          * 关闭登录窗口
          * @return {[type]} [description]
@@ -215,6 +226,17 @@
         */
         getVerificationCode: function () {
 
+        },
+        vaildate: function () {
+          var remember = document.querySelector('input[type="checkbox"]')
+          var psd = this.psd
+          var name = this.name
+          store.commit('vname', name)
+          store.commit('vpsd', psd)
+          if (remember.checked === true) {
+            store.commit('remember', true)
+          }
+          store.dispatch('vaildate')
         }
       }
     }

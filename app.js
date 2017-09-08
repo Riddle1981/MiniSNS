@@ -5,6 +5,7 @@ var cors = require('koa2-cors');
 const user = require('./controller/userdb.js');
 const userinfo = require('./controller/userinfo.js');
 const jwt = require('./controller/jwt.js');
+const temail = require('./controller/email.js')
 
 const app = new Koa();
 app.use(bodyParser());
@@ -30,8 +31,6 @@ router.post('/get', async (ctx, next) => {
             var info = jwt.create(uname);
             ctx.response.body = info;
             ctx.response.set("Access-Control-Allow-Origin", '*');
-            console.log(typeof info);
-            console.log(info);
         } else {
             ctx.response.body = '用户名或密码错误';
         }
@@ -39,6 +38,34 @@ router.post('/get', async (ctx, next) => {
         ctx.response.body = '无效用户名';
     }
 });
+
+
+router.post('/emails', async(ctx,next) => {
+    var email = ctx.request.body.email,
+        user = ctx.request.body;
+    temail.emailToken(user);
+    console.log(`signin with database: ${email}`);
+    if (email) {
+        var info = true;
+        ctx.response.body = info;
+        ctx.response.set("Access-Control-Allow-Origin", '*');
+        console.log(info);
+    } else {
+        ctx.response.body = '用户名或密码错误';
+    }
+
+});
+
+router.get('/temail',async(ctx,next) => {
+    var name = ctx.query.name,
+        psd = ctx.query.psd;
+    console.log(name+''+psd)
+    console.log(ctx.request.body)
+    await user.post(name,psd);
+    await userinfo.post(name);
+    ctx .response.body = `<h2>注册成功 点击<a href='http://localhost:8080'>立即跳转</a></h2>`
+
+})
 
 router.post('/token', async(ctx,next) => {
   var token = ctx.request.body.token || ''

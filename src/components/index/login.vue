@@ -6,11 +6,11 @@
           <legend class="legend">账号登录</legend>
           <p>
             <label>手机或Email</label>
-            <input v-model="vname" type="text" placeholder="11位手机号或Email">
+            <input v-model="name" type="text" placeholder="11位手机号或Email">
           </p>
           <p>
                 <label>密　码</label>
-                <input v-model="vpsd" type="password" placeholder="密码">
+                <input v-model="psd" type="password" placeholder="密码">
           </p>
           <p>
             <input type="checkbox" name="" class="zddl">自动登录
@@ -61,14 +61,14 @@
     name: 'side',
     data () {
       return {
-        vname: '',
-        vpsd: '',
         hint: '',
         pet: '',
         level: '',
         fans: '',
         follow: '',
-        content: ''
+        content: '',
+        psd: '',
+        name: ''
       }
     },
     computed: {
@@ -87,32 +87,15 @@
     },
     methods: {
       vaildate: function () {
-        const that = this
-        var data = 'name=' + this.vname + '&psd=' + this.vpsd
-        var forget = document.querySelector('input[type="checkbox"]')
-        var xmlhttp = new XMLHttpRequest()
-        var jsonwt = 'hello world'
-        if (window.XMLHttpRequest) {
-          xmlhttp = new XMLHttpRequest()
-        } else {
-          // xmlhttp = new ActiveXObject('Microsoft.XMLHTTP');
+        var remember = document.querySelector('input[type="checkbox"]')
+        var psd = this.psd
+        var name = this.name
+        store.commit('vname', name)
+        store.commit('vpsd', psd)
+        if (remember.checked === true) {
+          store.commit('remember', true)
         }
-
-        xmlhttp.onreadystatechange = function () {
-          if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-            window.location.reload()
-            that.seen = false
-            jsonwt = xmlhttp.responseText
-            if (forget.checked === 'ture') {
-              localStorage.token = jsonwt
-            } else {
-              sessionStorage.token = jsonwt
-            }
-          }
-        }
-        xmlhttp.open('POST', 'http://localhost:3000/get', true)
-        xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
-        xmlhttp.send(data)
+        store.dispatch('vaildate')
       }
     },
     components: {

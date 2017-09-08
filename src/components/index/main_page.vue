@@ -2,7 +2,7 @@
   <div class="main_page layout-lr-850300">
     <div class="list">
       <ul class="select" @click="current">
-        <li><router-link to="/new">最新回答</router-link></li>
+        <li><router-link to="/">最新回答</router-link></li>
         <li><router-link to="/hottest">最热回答</router-link></li>
         <li><router-link to="/unanswered">等待回答</router-link></li>
         <li><router-link to="/feed">最新动态</router-link></li>

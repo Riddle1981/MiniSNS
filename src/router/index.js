@@ -20,7 +20,7 @@ export default new Router({
       component: main,
       children: [
         {
-          path: '/new',
+          path: '/',
           name: '最新',
           component: New
         },
