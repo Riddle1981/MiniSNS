@@ -12,7 +12,9 @@ export default new vuex.Store({
     anum: 0,
     birth: '',
     industry: '',
+    domicile: '',
     autograph: '',
+    sex: '',
     vname: '',
     vpsd: '',
     remember: false,
@@ -22,16 +24,15 @@ export default new vuex.Store({
   },
   actions,
   mutations: {
-    id (state, user) {
+    info (state, user) {
       state.mystatus = user.id
-    },
-    following (state, user) {
       state.following = user.following
-    },
-    follower (state, user) {
       state.follower = user.follower
-    },
-    anum (state, user) {
+      state.birth = user.birth
+      state.autograph = user.autograph
+      state.industry = user.industry
+      state.domicile = user.domicile
+      state.sex = user.sex
       state.anum = user.anum
     },
     seen (state) {

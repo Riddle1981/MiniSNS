@@ -79,6 +79,8 @@ router.post('/token', async(ctx,next) => {
     follower: user[0].follower,
     following: user[0].following,
     industry: user[0].industry,
+    domicile: user[0].domicile,
+    sex: user[0].sex,
     anum: user[0].anum,
     autograph: user[0].autograph
   }

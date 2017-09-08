@@ -98,23 +98,40 @@
 
 <script>
   import myBlog from './oBlog'
-
+  import store from '../../store/store.js'
   export default{
     name: 'head',
     data () {
       return {
         text: '',
         info: false,
-        following: '200',
-        follower: '200',
         uname: this.$route.params.id,
-        industry: '学生',
-        domicile: '西安',
-        sex: '女',
-        birthday: '1997-01-01',
-        myintro: 'The more you do,the more you can do.',
         wordc: '300'
       }
+    },
+    computed: {
+      follower () {
+        return store.state.follower
+      },
+      following () {
+        return store.state.following
+      },
+      domicile () {
+        return store.state.domicile
+      },
+      sex () {
+        return store.state.sex
+      },
+      industry () {
+        return store.state.industry
+      },
+      birthday () {
+        return store.state.birth
+      },
+      myintro () {
+        return store.state.autograph
+      }
+
     },
     methods: {
       upda: function (event) {
@@ -144,7 +161,6 @@
   hr{
     opacity: 0.5;
     filter: alpha(opacity=30, finishopacity=0,style=1);
-    align: center;
     width: 800px;
     margin-left: 50px;
   }

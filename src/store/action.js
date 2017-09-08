@@ -11,10 +11,7 @@ export default{
       if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
         info = JSON.parse(xmlHttp.responseText)
         store.state.mystatus = info
-        commit('id', info)
-        commit('following', info)
-        commit('follower', info)
-        commit('anum', info)
+        commit('info', info)
         commit('seen')
         commit('login')
       }
@@ -64,13 +61,12 @@ export default{
     xmlhttp.onreadystatechange = function () {
       if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
         if (xmlhttp.responseText) {
-          alert(' 验证成功')
+          alert('请进入邮箱确认注册后登陆')
         }
       }
     }
     xmlhttp.open('POST', 'http://localhost:3000/emails', true)
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
     xmlhttp.send(data)
-    alert(data.email)
   }
 }

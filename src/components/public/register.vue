@@ -19,7 +19,7 @@
                             <span>{{ nameTip }}</span>
                         </p>
 
-                        <p>
+                        <!-- <p>
                             <input v-on:click="telephoneRegister" checked="checked" type="radio" name="registerMethod" title="用户名注册">用户名注册
                             <input v-on:click="emailRegister" type="radio" name="registerMethod" title="用Email注册">用Email注册
                         </p>
@@ -29,7 +29,7 @@
                             <span>{{ telephoneTip }}</span><br>
                             <input id="verificationCode" type="text" placeholder="短信验证码">
                             <button v-on:click="getVerificationCode" class="sendVerificationCode">获取验证码</button><br>
-                        </p>
+                        </p> -->
 
                         <p id="hide">
                             <label>邮　箱</label>
@@ -49,12 +49,11 @@
 
                 <form>
                     <fieldset>
-                        <legend>登录</legend>
+                        <legend>登录</legend>                
                         <p>
-                            <label>手机或Email</label><br>
-                            <input v-model='name' type="text" placeholder="11位手机号或Email">
+                            <label>手机或Email</label>
+                            <input v-model="name" type="text" placeholder="11位手机号或Email">
                         </p>
-
                         <p>
                             <label>密　码</label>
                             <input v-model="psd" type="password" placeholder="密码">
@@ -116,6 +115,12 @@
             psd: this.pass,
             name: this.userName
           }
+          var oContainer = document.getElementById('container')
+          var oCover = document.getElementById('cover')
+
+          oContainer.style.display = 'none'
+          oCover.style.display = 'none'
+          history.back()
           store.commit('register', users)
           store.dispatch('email')
         },
@@ -148,19 +153,19 @@
           }
         },
 
-        /**
-         * 电话验证
-         * @return {[type]} [description]
-        */
-        telephoneVerification: function () {
-          var regPhone = /\d{11}/
+        // /**
+        //  * 电话验证
+        //  * @return {[type]} [description]
+        // */
+        // telephoneVerification: function () {
+        //   var regPhone = /\d{11}/
 
-          if (!regPhone.test(this.telephone)) {
-            this.telephoneTip = '请输入11位手机号'
-          } else {
-            this.telephoneTip = ''
-          }
-        },
+        //   if (!regPhone.test(this.telephone)) {
+        //     this.telephoneTip = '请输入11位手机号'
+        //   } else {
+        //     this.telephoneTip = ''
+        //   }
+        // },
 
         /**
          * 邮箱验证
@@ -188,29 +193,29 @@
           }
         },
 
-        /**
-         * 电话注册方式
-         * @return {[type]} [description]
-        */
-        telephoneRegister: function () {
-          var oHide = document.getElementById('hide')
-          var oShow = document.getElementById('show')
+        // /**
+        //  * 电话注册方式
+        //  * @return {[type]} [description]
+        // */
+        // telephoneRegister: function () {
+        //   var oHide = document.getElementById('hide')
+        //   var oShow = document.getElementById('show')
 
-          oHide.style.display = 'none'
-          oShow.style.display = 'block'
-        },
+        //   oHide.style.display = 'none'
+        //   oShow.style.display = 'block'
+        // },
 
-        /**
-         * 邮箱注册方式
-         * @return {[type]} [description]
-        */
-        emailRegister: function () {
-          const oHide = document.getElementById('hide')
-          const oShow = document.getElementById('show')
+        // /**
+        //  * 邮箱注册方式
+        //  * @return {[type]} [description]
+        // */
+        // emailRegister: function () {
+        //   const oHide = document.getElementById('hide')
+        //   const oShow = document.getElementById('show')
 
-          oHide.style.display = 'block'
-          oShow.style.display = 'none'
-        },
+        //   oHide.style.display = 'block'
+        //   oShow.style.display = 'none'
+        // },
 
         /**
          * 记住密码
@@ -365,7 +370,7 @@ span {
     height: 14px;
 }
 #hide {
-    display: none;
+    /* display: none; */
 }
 #verificationCode {
     display: inline-block;

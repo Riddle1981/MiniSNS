@@ -23,12 +23,13 @@ var UserInfo = sequelize.define('userinfo', {
     primaryKey: true
   },
   name: Sequelize.STRING(100),
-  birth: Sequelize.STRING(20),
+  birth: Sequelize.STRING(10),
   sex: Sequelize.STRING(2),
   following: Sequelize.STRING(20),
   follower: Sequelize.STRING(20),
   anum: Sequelize.STRING(20),
   industry: Sequelize.STRING(20),
+  domicile: Sequelize.STRING(20),
   autograph: Sequelize.STRING(255)
 }, {
   timestamps: false
