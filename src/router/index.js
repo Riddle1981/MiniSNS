@@ -9,6 +9,9 @@ import Experts from '../components/index/experts'
 import register from '../components/public/register'
 import forget from '../components/public/forget'
 import user from '../components/public/user'
+import news from '../components/index/news'
+import Notify from '../components/index/Notify'
+import Private from '../components/index/Private'
 
 Vue.use(Router)
 
@@ -61,6 +64,28 @@ export default new Router({
       path: '/user/:id',
       name: user,
       component: user
+    },
+    {
+      path: '/news',
+      name: '消息',
+      component: news,
+      children: [
+        {
+          path: '/',
+          name: '通知提醒',
+          component: Notify
+        },
+        {
+          path: '/Notify',
+          name: '通知提醒',
+          component: Notify
+        },
+        {
+          path: '/Private',
+          name: '私信消息',
+          component: Private
+        }
+      ]
     }
   ]
 })

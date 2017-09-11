@@ -24,7 +24,8 @@
        </li>
        <li class="item">
          <img src="../../assets/message2.png"/>
-         <span>消息</span>
+         <router-link to="news"><span>消息</span>
+         </router-link>
        </li>
        <li v-if="login" class="item" >
          <img src="../../assets/user.png"/>
