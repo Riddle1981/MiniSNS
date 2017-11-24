@@ -12,6 +12,7 @@ import user from '../components/public/user'
 import news from '../components/index/news'
 import Notify from '../components/index/Notify'
 import Private from '../components/index/Private'
+import edit from '../components/public/editor'
 
 Vue.use(Router)
 
@@ -66,6 +67,11 @@ export default new Router({
       component: user
     },
     {
+      path: '/editor',
+      name: '发帖',
+      component: edit
+    },
+    {
       path: '/news',
       name: '消息',
       component: news,
@@ -76,7 +82,7 @@ export default new Router({
           component: Notify
         },
         {
-          path: '/Notify',
+          path: '/Note',
           name: '通知提醒',
           component: Notify
         },

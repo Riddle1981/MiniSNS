@@ -80,7 +80,7 @@
           </div>
           <div class="item" id="text">
             <label>简述：</label>
-            <textarea maxlength="300" name="textarea" @input="mycou" v-model="text"  :value="myintro"></textarea>
+            <textarea maxlength="300" name="textarea" @input="mycou" v-model="text"  ></textarea>
           </div>
           <div id="icount">
             <p id="spann">您还可以输入{{wordc}}字</p>
@@ -322,7 +322,7 @@
     height: 30px;
     font-size: 32px;
     color: #808080;
-    text-weight: 500;
+    font-weight: 500;
     /*关闭按钮*/
   }
   .btn{

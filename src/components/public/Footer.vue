@@ -33,7 +33,7 @@
       <div id="img">
         <img src="../../../user/2.jpg"/>
       </div>
-      <p>扫码关注微信公众平台{{message}}</p>
+      <p>扫码关注微信公众平台</p>
     </div>
     <div id="contact" class="about">
       <ul @click="sendd">
@@ -79,17 +79,17 @@
     text-decoration: none;
   }
   .footer{
-    top:780px;
     width: 100%;
     height: 220px;
-    position: absolute;
-    background: #444B65;
+    border-top: 1px solid #eeeeee;
     padding-top: 30px;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
   }
-  .footer .about{
-    color: #fff;
-    float: left;
-    margin-left: 50px;
+.about{
+    color:#808696;
+    flex-basis: 200px;
   }
   #wx{
     height: 160px;
@@ -116,13 +116,12 @@
   .footer .about ul li {
     list-style: none;
     margin-bottom: 10px;
-    color:white;
     font-size: 14px;
   }
   .footer .about ul li:nth-child(1){
     font-size: 18px;
   }
   .footer .about ul li a{
-    color:#808696;
+    color: #000000;
   }
 </style>

@@ -24,8 +24,7 @@
     <div id="rightContent" v-else >
       <div class="logins" >
         <div class="logined">
-          <div class="Cover">
-          </div>
+          <div class="Cover"></div>
           <div class="sculpture">
             <img src="../../../user/2.jpg" height="80" width="80">
           </div>
@@ -51,6 +50,7 @@
       </div>
       <commend></commend>
     </div>
+    <div class="clearfix"></div>
   </div>
 </template>
 
@@ -105,13 +105,19 @@
 </script>
 
 <style scoped>
+  #side{
+    margin-left: 70px;
+    margin-top: 70px;
+    float: left;
+    padding-bottom: 20px; 
+  }
+  .clearfix{
+    clear: both;
+  }
   .zddl{
     margin-left: 0px;
   }
   .login {
-    margin-left: 70px;
-    margin-top: 70px;
-    float: left;
     width: 300px;
     height: 320px;
     /*border: 1px solid #ccc;*/
@@ -190,13 +196,9 @@
   }
   #rightContent {
     width: 235px;
-    position: absolute;
-    top: 10%;
-    left: 70.7%;
   }
   .logins {
     display: inline-block;
-    margin-top: 30px;
     text-align: center;
     border-radius: 6px;
     border: 1px solid #ccc;
@@ -207,15 +209,10 @@
     width: 235px;
     height: 80px;
   }
-  .sculpture{
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    margin-left: -40px;
-    z-index: 1;
-  }
   .sculpture img{
     border-radius: 50%;
+    position: relative;
+    transform: translateY(-50%);
   }
   .message {
     display: inline-block;

@@ -38,6 +38,12 @@ export default {
 
 <style lang="less" scoped>
   .layout-lr-850300{
+    width: 1290px;
+    position: relative;
+    min-height: 400px;
+    margin-left: -645px;
+    padding-bottom: 100px;
+    left:50%;
     .list{
       margin-top: 20px;
       float: left;

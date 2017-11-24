@@ -5,9 +5,7 @@
 **/
 <template>
   <div id="myblog">
-    <div id="blog">
-      <blog-model></blog-model>
-      <blog-model></blog-model>
+    <div id="blog"> 
       <blog-model></blog-model>
     </div>
     <div id="other">
@@ -51,6 +49,7 @@
         </div>
       </div>
     </div>
+    <div class="clearfix"></div>
   </div>
 </template>
 
@@ -77,9 +76,12 @@
 <style scoped>
   #myblog{
     width:1170px;
-    height:600px;
+    padding-bottom: 30px;
     margin:0 auto;
     /*整体样式*/
+  }
+  .clearfix{
+    clear:both;
   }
   #blog{
     height: 600px;
@@ -91,7 +93,6 @@
     /*博文部分*/
   }
   #other{
-    height: 600px;
     width: 300px;
     margin-left: 10px;
     margin-top: 10px;

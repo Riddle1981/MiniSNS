@@ -260,12 +260,10 @@
 }
 #container {
     position: absolute;
-    top: 50%;
     left: 50%;
     width: 900px;
     height: 560px;
     margin-left: -450px;
-    margin-top: -280px;
     z-index: 1050;
     background: #fff;
     border-radius: 6px;
