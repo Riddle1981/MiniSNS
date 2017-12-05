@@ -23,6 +23,7 @@
     "koa2-cors": "^2.0.3",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
+    "mavon-editor": "^2.4.9",
     "moment": "^2.18.1",
     "mysql": "2.11.1",
     "mz": "2.4.0",

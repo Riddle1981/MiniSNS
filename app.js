@@ -5,7 +5,8 @@ var cors = require('koa2-cors');
 const user = require('./controller/userdb.js');
 const userinfo = require('./controller/userinfo.js');
 const jwt = require('./controller/jwt.js');
-const temail = require('./controller/email.js')
+const temail = require('./controller/email.js');
+const artical = require('./controller/artical.js');
 
 const app = new Koa();
 app.use(bodyParser());

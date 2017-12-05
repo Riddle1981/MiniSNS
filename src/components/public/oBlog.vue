@@ -84,7 +84,7 @@
     clear:both;
   }
   #blog{
-    height: 600px;
+    padding-bottom: 20px;
     width: 855px;
     margin-top: 10px;
     background: #FFF;
